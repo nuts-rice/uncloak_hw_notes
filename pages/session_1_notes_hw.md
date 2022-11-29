@@ -17,4 +17,11 @@
 			- A "good" encryption algo should be able to easily withstand chosen-plaintexts. Attacker has more freedom in a chosen-ciphnertext attack as you have both plaintext and corresponding plaintext.
 				- However theres *other* factors to the security of an algorithm:
 					- An attacker could recover info about an message which is *broken* diffusion while still having *successful* confusion. If one bit doesnt change when it should to be secure, thats *bad*
-					-
+		- Q7. Consider a symmetric-key cryptosystem in which cryptographic keys are randomly selected from the set of all n-bit strings. Approximately what should n be in order to provide 128 bits of security against a birthday attack.
+			- pg 34: as there are 2^n possible values you'll need almost sqrt(2^n) = 2^n/2 elements in a set before a collision, which is a birthday bound 2^128/2 = 256.
+	- General hw questions:
+		- Find two libraries for each of RSA, TLS/SSL, and AEAD. Evaluate the maturity each library, and skim the code. What about the library structure makes sense? How is their documentation?
+			- https://github.com/RustCrypto/RSA- seems audited by a third party, dogfoods by using the rust crypto `digest` trait which makes sense. Long comments
+			- https://github.com/rustls/rustls- active release schedule alongside build automation and test automation and has bindings for openSSL, apparently is more secure than openssl?
+			-
+	-
