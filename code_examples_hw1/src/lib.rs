@@ -1,4 +1,4 @@
-use rand::{rngs::ThreadRng, CryptoRng, Rng, RngCore};
+use rand::{CryptoRng, RngCore};
 use rsa::{PaddingScheme, PublicKey, RsaPrivateKey, RsaPublicKey};
 
 const BITS: usize = 2048;
@@ -35,5 +35,41 @@ pub mod vignere {
     #[derive(Clone, Debug)]
     pub struct Vignere<'a> {
         key: &'a [u8],
+    }
+
+    fn is_alphabetic(s: &str) -> anyhow::Result<()> {
+        for c in s.chars() {
+            match c {
+                'a'..='z' => (),
+                _ => return Err(anyhow::anyhow!("must be lowercase a-z: {c}")),
+            }
+        }
+        Ok(())
+    }
+    impl<'a> Vignere<'a> {
+        pub fn new(key: &'a str) -> anyhow::Result<Self> {
+            is_alphabetic(key)?;
+            Ok(Self {
+                key: key.as_bytes(),
+            })
+        }
+
+        pub fn encrypt(&self, plaintext: &str) -> anyhow::Result<Vec<u8>> {
+            is_alphabetic(plaintext)?;
+            let iter_key = self.key.iter().cycle();
+            let res = std::iter::zip(plaintext.bytes(), iter_key)
+                .map(|(p, k)| {
+                    let p = p - b'a';
+                    let k = k - b'a';
+                    let c = (p + k) % 26;
+                    c + b'a'
+                })
+                .collect::<Vec<_>>();
+            Ok(res)
+        }
+
+        pub fn decrypt(&self, _ciphertxt: &str) -> anyhow::Result<String> {
+            unimplemented!()
+        }
     }
 }

@@ -23,5 +23,8 @@
 		- Find two libraries for each of RSA, TLS/SSL, and AEAD. Evaluate the maturity each library, and skim the code. What about the library structure makes sense? How is their documentation?
 			- https://github.com/RustCrypto/RSA- seems audited by a third party, dogfoods by using the rust crypto `digest` trait which makes sense. Long comments
 			- https://github.com/rustls/rustls- active release schedule alongside build automation and test automation and has bindings for openSSL, apparently is more secure than openssl?
-			-
+		- Benchmark the speed of an algorithm in the two different implementations with Criterion
+			- ![Screenshot from 2022-11-30 13-16-25.png](../assets/Screenshot_from_2022-11-30_13-16-25_1669832344101_0.png)
+		- Implement the [Vignère cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) in 100 lines or less.
+		-
 	-
