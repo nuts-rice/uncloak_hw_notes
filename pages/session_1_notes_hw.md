@@ -26,5 +26,6 @@
 		- Benchmark the speed of an algorithm in the two different implementations with Criterion
 			- ![Screenshot from 2022-11-30 13-16-25.png](../assets/Screenshot_from_2022-11-30_13-16-25_1669832344101_0.png)
 		- Implement the [Vignère cipher](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher) in 100 lines or less.
-		-
+			- owns encrypt() and decrypt() fn
+			-
 	-
