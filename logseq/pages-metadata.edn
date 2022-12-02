@@ -22,6 +22,9 @@
  {:block/name "dec 1st, 2022",
   :block/created-at 1669913897635,
   :block/updated-at 1669913897635}
+ {:block/name "dec 2nd, 2022",
+  :block/created-at 1669957202195,
+  :block/updated-at 1669957202195}
  {:block/name "doing",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -37,6 +40,9 @@
  {:block/name "later",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
+ {:block/name "lecture_session_3_notes",
+  :block/created-at 1670003134406,
+  :block/updated-at 1670003134406}
  {:block/name "nov 28th, 2022",
   :block/created-at 1669667717738,
   :block/updated-at 1669667717738}
@@ -57,7 +63,7 @@
   :block/updated-at 1669836801145}
  {:block/name "session_2_notes_hw",
   :block/created-at 1669836819185,
-  :block/updated-at 1669916965660}
+  :block/updated-at 1670006484020}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
