@@ -22,6 +22,7 @@
  {:block/name "dec 1st, 2022",
   :block/created-at 1669913897635,
   :block/updated-at 1669913897635}
+<<<<<<< HEAD
  {:block/name "dec 2nd, 2022",
   :block/created-at 1669957202195,
   :block/updated-at 1669957202195}
@@ -34,6 +35,8 @@
  {:block/name "dec 5th, 2022",
   :block/created-at 1670248286687,
   :block/updated-at 1670248286687}
+=======
+>>>>>>> refs/remotes/origin/main
  {:block/name "doing",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -72,10 +75,14 @@
   :block/updated-at 1669836801145}
  {:block/name "session_2_notes_hw",
   :block/created-at 1669836819185,
+<<<<<<< HEAD
   :block/updated-at 1670251373677}
  {:block/name "session_3_notes_hw",
   :block/created-at 1670205029836,
   :block/updated-at 1670273938415}
+=======
+  :block/updated-at 1669916965660}
+>>>>>>> refs/remotes/origin/main
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
