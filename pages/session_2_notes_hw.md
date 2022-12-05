@@ -44,6 +44,24 @@
 			- FIrst operation is to XOR plaintext with 16 bytes of round key
 			- ![Screenshot from 2022-12-02 12-36-37.png](../assets/Screenshot_from_2022-12-02_12-36-37_1670002622558_0.png)
 				- XOR adds key material to the data, S-boxes provide nonlinearility, and byte shuffle and mixing provides diffusion
+	- Chapter 4:
+		- Padding:
+			- so blocvk chain modes require a bit of padding to be the exact multiple of the block size we need
+			- very simple is that we can add 0s. This is a bad idea as its not tractable (reversable) as plaintext p and p||0 (concated with 0s) is the same padded form
+			- How do we do it then?
+				- Let *P* be the plaintext and *l(p)* be length of plaintext in bytes, *b* will be block size of the cipher in bytes.
+					- One of two schemes we can use:
+						- Append a single byte with value of 128, then as many zero bytes as required to make overall length a multiple of b. Num of zeroes added is the range 0...b-1
+						- Determine the number of padding bytes required. This is the number *n* which satisies 1<=n<=b and n +l(p) is a multiple of *b*
+					- Any padding scheme is fine, as long as its tractable.
+		- ECB:
+			- Simplest method is the electronic codebook mode, this is defined by ![image.png](../assets/image_1670204330698_0.png)
+			- We dont use ECB lol
+		- CBC:
+			- Cipher block chaining is widely used, problems of ECB are avoided by XORing each plaintext block with previous ciphertext block.
+			- ![image.png](../assets/image_1670204484377_0.png)
+			- randomized plaintext using previous ciphertext block.
+			- so how are we supposed to use for C_0, this is known as the initialization vector.
 - Homework
 	- 1; How much space would be required to store a table for an entire idealized block cipher that operates on 64-bit blocks and has 80-bit keys?
 		- 140 million TB lol (pg 44)?? Nah it could actually be pg 46
