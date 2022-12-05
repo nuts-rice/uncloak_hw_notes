@@ -31,6 +31,9 @@
  {:block/name "dec 4th, 2022",
   :block/created-at 1670202186656,
   :block/updated-at 1670202186656}
+ {:block/name "dec 5th, 2022",
+  :block/created-at 1670248286687,
+  :block/updated-at 1670248286687}
  {:block/name "doing",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -69,10 +72,10 @@
   :block/updated-at 1669836801145}
  {:block/name "session_2_notes_hw",
   :block/created-at 1669836819185,
-  :block/updated-at 1670204979535}
+  :block/updated-at 1670251373677}
  {:block/name "session_3_notes_hw",
   :block/created-at 1670205029836,
-  :block/updated-at 1670205103005}
+  :block/updated-at 1670273938415}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}

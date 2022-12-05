@@ -1,4 +1,9 @@
--
+- Chapter 5:
+	- Hash Function is a function that takes an arbitarily long string of bits and produces a fixed size result.
+	- given a message *m*, we can apply hash function *h* and sign on *h*(*m*) to save on computation
+	- result of *h* is typically between 128 to 1024 bits as opposed to millions for the message *m* istself
+	- hash functions are sometimes called *message digest* functions and the hash result is called the *digest* or fingerprint
+	-
 -
 -
 -
