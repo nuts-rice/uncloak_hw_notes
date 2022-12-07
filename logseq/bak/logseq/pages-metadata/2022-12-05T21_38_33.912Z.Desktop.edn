@@ -19,12 +19,24 @@
  {:block/name "contents",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
- {:block/name "dec 6th, 2022",
-  :block/created-at 1670333217786,
-  :block/updated-at 1670333217786}
- {:block/name "dec 7th, 2022",
-  :block/created-at 1670444202183,
-  :block/updated-at 1670444202183}
+ {:block/name "dec 1st, 2022",
+  :block/created-at 1669913897635,
+  :block/updated-at 1669913897635}
+<<<<<<< HEAD
+ {:block/name "dec 2nd, 2022",
+  :block/created-at 1669957202195,
+  :block/updated-at 1669957202195}
+ {:block/name "dec 3rd, 2022",
+  :block/created-at 1670103870716,
+  :block/updated-at 1670103870716}
+ {:block/name "dec 4th, 2022",
+  :block/created-at 1670202186656,
+  :block/updated-at 1670202186656}
+ {:block/name "dec 5th, 2022",
+  :block/created-at 1670248286687,
+  :block/updated-at 1670248286687}
+=======
+>>>>>>> refs/remotes/origin/main
  {:block/name "doing",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -40,9 +52,18 @@
  {:block/name "later",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
+ {:block/name "lecture_session_3_notes",
+  :block/created-at 1670003134406,
+  :block/updated-at 1670003134406}
  {:block/name "nov 28th, 2022",
   :block/created-at 1669667717738,
   :block/updated-at 1669667717738}
+ {:block/name "nov 29th, 2022",
+  :block/created-at 1669698000193,
+  :block/updated-at 1669698000193}
+ {:block/name "nov 30th, 2022",
+  :block/created-at 1669829281198,
+  :block/updated-at 1669829281198}
  {:block/name "now",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -50,14 +71,18 @@
   :block/created-at 1669667717770,
   :block/updated-at 1669667717770}
  {:block/name "session_1_notes_hw",
-  :block/created-at 1670356886051,
-  :block/updated-at 1670356886051}
+  :block/created-at 1669667746611,
+  :block/updated-at 1669836801145}
  {:block/name "session_2_notes_hw",
-  :block/created-at 1670356886246,
-  :block/updated-at 1670356886246}
+  :block/created-at 1669836819185,
+<<<<<<< HEAD
+  :block/updated-at 1670251373677}
  {:block/name "session_3_notes_hw",
-  :block/created-at 1670356886378,
-  :block/updated-at 1670366108045}
+  :block/created-at 1670205029836,
+  :block/updated-at 1670273938415}
+=======
+  :block/updated-at 1669916965660}
+>>>>>>> refs/remotes/origin/main
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
