@@ -1,6 +1,6 @@
 const BITS: usize = 16;
 
-mod sha512 {
+pub mod sha512 {
 
     use sha2::{Digest, Sha512};
     use std::collections::HashMap;
@@ -14,7 +14,7 @@ mod sha512 {
         res[0..(n_bytes as usize)].to_vec()
     }
 
-    fn compute_birthday_attack(n: u8) {
+    pub fn compute_birthday_attack(n: u8) {
         let num_iterations = 2u32.pow(n as u32 / 2);
         let mut i = 0;
         let mut map: HashMap<Vec<u8>, String> = HashMap::new();
