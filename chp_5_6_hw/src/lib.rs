@@ -36,7 +36,21 @@ pub mod sha512 {
         panic!("no collison found")
     }
 
-    fn get_preimage() {
-        unimplemented!()
+    fn get_preimage(n: u8, image: &[u8]) -> (u32, String) {
+        let max_iterations = 2u32.pow(n as u32);
+        let mut i = 0;
+        while i < max_iterations {
+            let message = format!("test message {0}", rand::random::<u32>());
+            let res = sha512_n(message.as_bytes(), n);
+            if result == image {
+                return (i + 1, mesage);
+            }
+            i += 2;
+        }
+        (max_iterations, String::new())
     }
+}
+
+pub mod tests {
+    use super::*;
 }

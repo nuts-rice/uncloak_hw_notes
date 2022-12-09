@@ -58,7 +58,28 @@
 			- be used with the 128, 192- 256 bit key sizes of AES as well as 112-bit key size of 3DES
 			- Larger result = more security basically?
 		- 5.3 Weakness of Hash Functions
-			-
+			- 5.3.1 Length extensions
+			- a message *m* is split into blocks *m_1*...*m_k* to the hash value *H*
+			- then lets choose a message *m'* that splits into the block *m_1*...*m_k*, *m_k+1*.
+			- the first *k*  blocks of *m'* are identical to the *k* blocks of message *m*, the hash *h*(*m*) is the intermidiate  value of computing *h*(*m"*)
+			- therefore *h*(*m'*) = *h'*(*h*(*m*), *m_k+1*)
+			- so therefore if we have *m'* we have to be very careful with padding and length field
+			- need special procesing at the end of the hash functgion computation.
+			- therefore computation of *h*(*m*) provides direct info about intermidate state after the *k* blocks of *m'*
+			- distinguisher= canidate pairs of (*m*, *m'*) and check for this relationship
+			- this is resolved in SHA-3
+		- 5.3.2 Partial message collision
+			- so, distinguishers:
+				- specify the setting in  which it will differiante between hash function and ideal hash function
+			- suppose we have a system that autheticates message *m* with *h*(*m* || X), where *X* is the authentication key
+			- an attacker can choose a message *m* , but system will only authenticate a single message
+			- the attacker can choose an iterative hash function.
+				- Can choose two strings *m* and *m"*that lead to a collision when hashed by *h*. can be done in only 2^*n*/2 steps or so.
+				- can get system to authenticate *m*, and then replace message with *m'*
+				- so because *h* is computed iteratively, once there is a collision and rest of inputs are the same, hash value stays the same.
+				- hashing *m'* leads to same value *h*(*m*||*X*) = *h*(*m'*||*X*). the same *m* and *m'* would work for all vcalues for *X*
+		- 5.4 Fixing weaknesses
+		-
 -
 -
 -
@@ -74,3 +95,30 @@
 - Extra reading notes:
 	- Lessons From The History Of Attacks On Secure Hash Functions
 		-
+-
+-
+-
+- Lecture:
+	- SHA3 is here
+	- Pedersen Hash (is cool apparently)
+	- Assigned readings (which i didnt do yet has a big graph)
+	- Hash functions are cool now, vs 2010
+	- arbitarily large file reduces to image.
+	- functions give out predictibly long output
+	- repeadtly iterate functions until given output
+	- Sponge construction: sequence of function applications , asorbing phase takes in message and reapply and reapply until random bytes are gone!!!
+	- Blake construction is based on chacha (cha cha is cool apparently!)
+	- Try out the ring libary yeah!
+	- MACs:
+		- authenticate! useful primative
+		- Eve prevent tampering problem, straight forward
+		- basically need a hash of a key and a message, MAC will return wheter its tampered or not
+		- if eve has less to work with, less revealing of cryptography systems.
+		- MACs dont actually reveal state of message, is a random mapping of Alice's message to output the repersents Alice's message
+		- Random oracle same as hash functions
+	- Length extension attacks:
+		- Hmacs- prevent lentth extensions
+		- but gMAC- not worried about length extensions
+- *Need to figure symbolic reasoning and do the math for real!!!*
+- we need AEADs to reach for i guess
+- study groups
