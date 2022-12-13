@@ -79,16 +79,59 @@
 				- so because *h* is computed iteratively, once there is a collision and rest of inputs are the same, hash value stays the same.
 				- hashing *m'* leads to same value *h*(*m*||*X*) = *h*(*m'*||*X*). the same *m* and *m'* would work for all vcalues for *X*
 		- 5.4 Fixing weaknesses
-		-
--
--
+			- Hash functions are random mapping
+			- 5.4.1 short term fix
+				- instead of just *m*->*h*(*m*) we could use *m*->*h(h(m)||m)* as a hash function
+				- basically we hash message before the message we hash
+				- iterative hash computations depend on all bits of message, no partial-message or length extension can work
+				- #+BEGIN_QUOTE
+				  Defn 6: Let *h* be an iterative hash function. the hash function *h_DBL* is defined by *h_DBL(m)* := *h(h(m)||m)*
+				  #+END_QUOTE
+				- if *h* is of SHA-2, has a security level of *n* bits where *n* is the size of hash result.
+				- But this is slow!!! twice as long!
+				- can't do a stream, requires the whole *m* to be hashed!
+			- 5.4.2 more efficent short term fix
+				- Instead of *h(m)* we can use *h(h(0^b||m))* as a hash function and claim security level of just *n/2*. *b* is the block length of underlying compression function, so *0^b||m* means we prend the message with an all zero block before hashing
+				- Hash functions are already designed against collision attacks so the hash function size is suitably large.
+				- If we apply to SHA-256, we get security level weith 128 bit security level
+- Chapter 6 notes:
+	- #+BEGIN_QUOTE
+	  message authentication code or MAC is a construction that detects tampering of message
+	  #+END_QUOTE
+	- takes 2 arguments, fixed size *K*  and arbitarly sized message *m* to produce fixed size MAC value
+	- write MAC function as *MAC(K, m)*, authenticae message with message *m* and MAC code *MAC(K, m)*, also called tag.
+	- CBC-MAC
+		- turn block cipher into a MAC.
+		- Key *K* is used as block cipher key
+		- encrypt message *m* using CBC mode and then throw awasy all but the last block of cipher text
+		- for a message *P_1...P_k* MAC is computed as:
+			- *H_0* := IV
+			- *H_i* := *E_K(P_i XOR H_i-1)*
+			- MAC := *H_K*
 -
 -
 -
 - chapter 5 homework:
 	- Exercise 5.3 Consider SHA-512-n, a hash function that first runs SHA-512 and then outputs only the first *n* bits of the result. Write a program that uses a birthday attack to find and output a collision on SHA-512-n, where n is a multiple of 8 between 8 and 48. Your program may use an existing cryptography library. Time how long your program takes when n is 16, averaged over five runs for each *n*. How long would you expect your program to take for SHA-512-256? For SHA-512?
--
--
+- chapter 6 homework:
+	- Exercise 6.3 Suppose a and b are both one block long, and suppose the sender MACs *a*, *b*, and *a||b* with CBC-MAC. An attacker who intercepts the MAC tags for these messages can now forge the MAC for the message *m* = *b||(M(b) XOR M(a) XOR b)*, which the sender never sent. The forged tag for this message is equal to
+	  *M(a||b)*, the tag for *a||b.* Justify mathematically why this is true.
+		- so *h(a)* || *h(b)* will equal *M(a || b)* because of decomposition of components involded in the HMAC due to nature of CBC-MAC, and collecting a collision for where *M(a)* = *M(b)* allows to send forged message without changing MAC value
+		-
+	- Exercise 6.4 Suppose message *a* is one block long. Suppose that an attacker has received the MAC *t* for *a* using CBC-MAC under some random key unknown to the attacker. Explain how to forge the MAC for a two-block message of your choice. What is the two-block message that you chose? What is the tag that you chose? Why is your chosen tag a valid tag for your two-block message?
+		- Would need to be iterative end of process that includes generating message *a*. Collect message until collision occurs, collect values for message *M(a||c)* = *M(b||c)* , and allow sender to authenticate message a||c so we can then replace with b||c
+	- Exercise 6.5 Using an existing cryptography library, compute the MAC of the message:
+	  
+	  ``` 
+	  4D 41 43 73 20 61 72 65 20 76 65 72 79 20 75 73 65 66 75 6C 20 69 
+	  6E 20 63 72 79 70 74 6F 67 72 61 70 68 79 21 20 20 20 20 20 20 20
+	  20 20 20 20
+	  ```
+	- using CBC-MAC with AES and the 256-bit key:
+	- ``` 
+	  80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+	  00 00 00 00 00 00 00 00 00 01
+	  ```
 -
 -
 -

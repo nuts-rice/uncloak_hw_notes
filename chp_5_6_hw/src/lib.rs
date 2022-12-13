@@ -1,9 +1,19 @@
 const BITS: usize = 16;
 
 pub mod sha512 {
-
+    use rand::prelude::*;
     use sha2::{Digest, Sha512};
     use std::collections::HashMap;
+    use std::fmt;
+
+    #[derive(Debug, Clone)]
+    pub struct Collison {
+        input1: u32,
+        input2: u32,
+        hash_value: Vec<u8>,
+        count: usize,
+        length: u16,
+    }
 
     pub fn sha512_n(plaintext: &[u8], num: u8) -> Vec<u8> {
         let mut hasher = Sha512::new();
@@ -42,14 +52,18 @@ pub mod sha512 {
         while i < max_iterations {
             let message = format!("test message {0}", rand::random::<u32>());
             let res = sha512_n(message.as_bytes(), n);
-            if result == image {
-                return (i + 1, mesage);
+            if res == image {
+                return (i + 1, message);
             }
             i += 2;
         }
         (max_iterations, String::new())
     }
 }
+
+//Exercise 5.4
+//find preimage M that hashes to '3D 48'
+pub mod preimage {}
 
 pub mod tests {
     use super::*;
