@@ -22,6 +22,15 @@
  {:block/name "dec 13th, 2022",
   :block/created-at 1670952485164,
   :block/updated-at 1670952485164}
+ {:block/name "dec 14th, 2022",
+  :block/created-at 1671038799704,
+  :block/updated-at 1671038799704}
+ {:block/name "dec 15th, 2022",
+  :block/created-at 1671113173718,
+  :block/updated-at 1671113173718}
+ {:block/name "dec 16th, 2022",
+  :block/created-at 1671212476675,
+  :block/updated-at 1671212476675}
  {:block/name "dec 9th, 2022",
   :block/created-at 1670597549012,
   :block/updated-at 1670597549012}
@@ -57,7 +66,10 @@
   :block/updated-at 1670597549417}
  {:block/name "session_3_notes_hw",
   :block/created-at 1670597549586,
-  :block/updated-at 1670961806395}
+  :block/updated-at 1670961888909}
+ {:block/name "session_4_notes_hw",
+  :block/created-at 1671212493243,
+  :block/updated-at 1671214872794}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
