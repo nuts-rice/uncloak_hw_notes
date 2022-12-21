@@ -1,0 +1,27 @@
+- # Book notes:
+	- Implementation Issues:
+		- Remeber weakest link property?
+	- 8.1 Creating correct programs
+		- #+BEGIN_NOTE
+		  A "correct" program is one that behaves exactly according to its specifications
+		  #+END_NOTE
+		- 8.1.1 Specifications:
+			- Many software projects have a document called the functional specification.
+			- bUT THEY USUALLY DONT LOL. without clear specs theres no hope for getting a correct program
+			- Three stages in specification process:
+				- Requirements:
+					- Informal descriptiopn of what the program is supposed to acheive. "*What* can i do with this program" rather than "how exactly do i do something"
+				- Functional specification:
+					- detailed and exhaustive defin of the behavior of the program. has to be things we measure outside of the program.
+					- bassically stuff we can test where the program passes or not
+				- Implementation design:
+					- how the program works internally. Contains all the things we can't test from the outside
+			- 8.1.2 Test and fix
+				- If we find a bug, implement a test that detects the bug. Check that bug is detected! then fix that bug! then check if test no longer finds the bug
+				- Whenever we find a bug, think about what caused it. Any other places where it might occur?
+				- keep track of every bug that we find!
+-
+- # Extra reading:
+-
+-
+- # Lecture

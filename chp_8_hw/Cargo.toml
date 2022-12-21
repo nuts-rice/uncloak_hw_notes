@@ -1,0 +1,14 @@
+[package]
+name = "chp_8_hw"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "^1.0"
+thiserror = "^1.0"
+secrecy = "0.8.0"
+serde = "^1.0"
+zeroize = "1.5.7"
+zeroize_derive = "^1.3"
