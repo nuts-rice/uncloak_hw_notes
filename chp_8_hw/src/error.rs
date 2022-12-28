@@ -1,11 +1,11 @@
-use anyhow::{ensure, Result};
+use anyhow::Result;
+
 use thiserror::Error;
 
 use std::io;
-use std::string::FromUtf8Error;
 
-pub enum Cli {
-    Command(String),
+pub struct Cli {
+    command: String,
 }
 
 #[derive(Debug, Error)]
@@ -18,8 +18,10 @@ pub enum CliError {
     UnexpectedOperation { expected: String, found: String },
 }
 
-fn get_cli() -> Result<String> {
-    unimplemented!()
+impl Cli {
+    fn get_cli() -> Result<String> {
+        unimplemented!()
+    }
 }
 
 /*

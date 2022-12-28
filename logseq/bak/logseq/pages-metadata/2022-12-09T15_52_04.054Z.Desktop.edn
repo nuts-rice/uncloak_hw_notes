@@ -19,33 +19,15 @@
  {:block/name "contents",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
- {:block/name "dec 13th, 2022",
-  :block/created-at 1670952485164,
-  :block/updated-at 1670952485164}
- {:block/name "dec 14th, 2022",
-  :block/created-at 1671038799704,
-  :block/updated-at 1671038799704}
- {:block/name "dec 15th, 2022",
-  :block/created-at 1671113173718,
-  :block/updated-at 1671113173718}
- {:block/name "dec 16th, 2022",
-  :block/created-at 1671212476675,
-  :block/updated-at 1671212476675}
- {:block/name "dec 20th, 2022",
-  :block/created-at 1671569149626,
-  :block/updated-at 1671569149626}
- {:block/name "dec 21st, 2022",
-  :block/created-at 1671641110796,
-  :block/updated-at 1671641110796}
- {:block/name "dec 22nd, 2022",
-  :block/created-at 1671718722686,
-  :block/updated-at 1671718722686}
- {:block/name "dec 23rd, 2022",
-  :block/created-at 1671806646744,
-  :block/updated-at 1671806646744}
- {:block/name "dec 9th, 2022",
-  :block/created-at 1670597549012,
-  :block/updated-at 1670597549012}
+ {:block/name "dec 6th, 2022",
+  :block/created-at 1670333217786,
+  :block/updated-at 1670333217786}
+ {:block/name "dec 7th, 2022",
+  :block/created-at 1670444202183,
+  :block/updated-at 1670444202183}
+ {:block/name "dec 8th, 2022",
+  :block/created-at 1670475604204,
+  :block/updated-at 1670475604204}
  {:block/name "doing",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -71,20 +53,14 @@
   :block/created-at 1669667717770,
   :block/updated-at 1669667717770}
  {:block/name "session_1_notes_hw",
-  :block/created-at 1670597549229,
-  :block/updated-at 1670597549229}
+  :block/created-at 1670356886051,
+  :block/updated-at 1670356886051}
  {:block/name "session_2_notes_hw",
-  :block/created-at 1670597549417,
-  :block/updated-at 1670597549417}
+  :block/created-at 1670356886246,
+  :block/updated-at 1670356886246}
  {:block/name "session_3_notes_hw",
-  :block/created-at 1670597549586,
-  :block/updated-at 1670961888909}
- {:block/name "session_4_notes_hw",
-  :block/created-at 1671212493243,
-  :block/updated-at 1671569367930}
- {:block/name "session_5_notes_hw",
-  :block/created-at 1671569213091,
-  :block/updated-at 1671641393440}
+  :block/created-at 1670356886378,
+  :block/updated-at 1670366108045}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}

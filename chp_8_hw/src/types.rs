@@ -1,14 +1,12 @@
-use zeroize::Zeroize;
+use std::marker::PhantomData;
 
-use std::marker;
+struct Send<T, S>(PhantomData<(T, S)>);
+struct Recv<T, S>(PhantomData<(T, S)>);
+struct Offer<Left, Right>(PhantomData<(Left, Right)>);
+struct Choose<Left, Right>(PhantomData<(Left, Right)>);
+struct Label<S>(PhantomData<S>);
+struct Goto<N>(PhantomData<N>);
 
-#[derive(Debug)]
-struct Key<State> {
-    value: *const u32,
-    len: usize,
-    cap: usize,
-    _state: marker::PhantomData<State>,
-}
 /*
 impl<State> Default for Key<State> {
     fn default() -> Key<State> {

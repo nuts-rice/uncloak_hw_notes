@@ -22,6 +22,11 @@
 				- keep track of every bug that we find!
 -
 - # Extra reading:
+- A look at session and channel based programming alongside lamda claculus used to define it [[https://www.di.fc.ul.pt/~vv/papers/honda.vasconcelos.kubo_language-primitives.pdf]]
+- Documentation on annotations used to flag unsafe state transitions in Rust [[https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent]]
+- Lecture notes on type state programming in Rust [[https://stanford-cs242.github.io/f19/lectures/08-2-typestate]]
+- Session Types for Rust [[https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf]]
+- Lecture notes on session types for Rust [[https://stanford-cs242.github.io/f19/lectures/09-1-session-types]]
 -
 -
 - # Lecture
