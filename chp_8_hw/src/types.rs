@@ -6,6 +6,12 @@ struct Offer<Left, Right>(PhantomData<(Left, Right)>);
 struct Choose<Left, Right>(PhantomData<(Left, Right)>);
 struct Label<S>(PhantomData<S>);
 struct Goto<N>(PhantomData<N>);
+struct Z;
+struct S<N>(PhantomData<N>); //check peano encoding here: https://en.wikipedia.org/wiki/Peano_axioms
+struct Close;
+
+struct Ping;
+type PingServer = Label<Offer<Send<Ping, Recv<Ping, Goto<Z>>>, Close>>;
 
 /*
 impl<State> Default for Key<State> {
