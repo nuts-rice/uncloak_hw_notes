@@ -64,6 +64,15 @@
 - Lecture notes on type state programming in Rust [[https://stanford-cs242.github.io/f19/lectures/08-2-typestate]]
 - Session Types for Rust [[https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf]]
 - Lecture notes on session types for Rust [[https://stanford-cs242.github.io/f19/lectures/09-1-session-types]]
+- Session types implemented in Rust [[https://github.com/Munksgaard/session-types/blob/master/src/lib.rs]]
+	- Session typed channels: always carry a protocol which dictates how communication is to take place
+		- #+BEGIN_EXAMPLE
+		  Imagine that two threads, 'A' and 'B' want to communicate in following pattern:
+		   1. 'A' sends interger to 'B'
+		  2. 'B' sends a boolean to 'A' depending on the interger recieved
+		  #+END_EXAMPLE
+	- Done by a single channel. From A's point of view it has the type *int ! (bool ? eps)*  where *t ! r* is the protocol "send something of type *t* then proceed with the protocol *r*". The protocol *t ? r* is "recieve something of type *t*" then proceed with protocol *r* and "eps" is a special marker indicating end of communication session.
+	-
 -
 -
 - # Lecture

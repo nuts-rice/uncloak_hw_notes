@@ -16,6 +16,8 @@ pub enum CliError {
     UnexpectedIO(#[from] io::Error),
     #[error("Unexpected operation (expected: {expected:?}. got {found:?}) ")]
     UnexpectedOperation { expected: String, found: String },
+    #[error(transparent)]
+    Anyhow(#[from] anyhow::Error),
 }
 
 impl Cli {

@@ -43,6 +43,15 @@
  {:block/name "dec 23rd, 2022",
   :block/created-at 1671806646744,
   :block/updated-at 1671806646744}
+ {:block/name "dec 28th, 2022",
+  :block/created-at 1672270171858,
+  :block/updated-at 1672270171858}
+ {:block/name "dec 29th, 2022",
+  :block/created-at 1672327758664,
+  :block/updated-at 1672327758664}
+ {:block/name "dec 30th, 2022",
+  :block/created-at 1672411624223,
+  :block/updated-at 1672411624223}
  {:block/name "dec 9th, 2022",
   :block/created-at 1670597549012,
   :block/updated-at 1670597549012}
@@ -55,18 +64,17 @@
  {:block/name "favorites",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
+ {:block/name "https:",
+  :block/created-at 1672270436247,
+  :block/updated-at 1672270436247}
  {:block/name
   "https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent",
-  :block/created-at 1672608659368,
-  :block/updated-at 1672608659368}
- {:block/name
-  "https://github.com/munksgaard/session-types/blob/master/src/lib.rs",
-  :block/created-at 1672608696632,
-  :block/updated-at 1672608696632}
+  :block/created-at 1672270315695,
+  :block/updated-at 1672270315695}
  {:block/name
   "https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf",
-  :block/created-at 1672608659370,
-  :block/updated-at 1672608659370}
+  :block/created-at 1672270376655,
+  :block/updated-at 1672270376655}
  {:block/name "https://stanford-cs242.github.io",
   :block/created-at 1672270436254,
   :block/updated-at 1672270436254}
@@ -82,18 +90,15 @@
   :block/updated-at 1672270347147}
  {:block/name
   "https://stanford-cs242.github.io/f19/lectures/09-1-session-types",
-  :block/created-at 1672608659371,
-  :block/updated-at 1672608659371}
+  :block/created-at 1672270412217,
+  :block/updated-at 1672270412217}
  {:block/name
   "https://www.di.fc.ul.pt/~vv/papers/honda.vasconcelos.kubo_language-primitives.pdf",
-  :block/created-at 1672608659367,
-  :block/updated-at 1672608659367}
+  :block/created-at 1672270200591,
+  :block/updated-at 1672270200591}
  {:block/name "in-progress",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
- {:block/name "jan 1st, 2023",
-  :block/created-at 1672608658979,
-  :block/updated-at 1672608658979}
  {:block/name "later",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -120,7 +125,7 @@
   :block/updated-at 1671569367930}
  {:block/name "session_5_notes_hw",
   :block/created-at 1671569213091,
-  :block/updated-at 1672609285700}
+  :block/updated-at 1672337138038}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
