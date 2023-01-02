@@ -59,7 +59,8 @@
 					- 8.3.4 Data reterntion by memory
 -
 - # Extra reading:
-- A look at session and channel based programming alongside lamda claculus used to define it [[https://www.di.fc.ul.pt/~vv/papers/honda.vasconcelos.kubo_language-primitives.pdf]]
+- [Type level programming in Rust](https://willcrichton.net/notes/type-level-programming/) Rust's type system is Turing complete: Traits at compile time are type-level operators (functions on types instead of data), Inputs can consist of Generic types, outputs can be Associated types `impl MyTrait ... {type 01;}`
+- A look at session and channel based programming alongside lamda claculus used to define it [https://www.di.fc.ul.pt/~vv/papers/honda.vasconcelos.kubo_language-primitives.pdf]
 - Documentation on annotations used to flag unsafe state transitions in Rust [[https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent]]
 - Lecture notes on type state programming in Rust [[https://stanford-cs242.github.io/f19/lectures/08-2-typestate]]
 - Session Types for Rust [[https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf]]

@@ -13,30 +13,116 @@ use tylift::tylift;
 
 struct Send<T, S>(PhantomData<(T, S)>);
 struct Recv<T, S>(PhantomData<(T, S)>);
-struct Offer<Left, Right>(PhantomData<(Left, Right)>);
-struct Choose<Left, Right>(PhantomData<(Left, Right)>);
+//struct Offer<Left, Right>(PhantomData<(Left, Right)>);
+//struct Choose<Left, Right>(PhantomData<(Left, Right)>);
 struct Label<S>(PhantomData<S>);
 struct Goto<N>(PhantomData<N>);
 struct Z;
 struct S<N>(PhantomData<N>); //check peano encoding here: https://en.wikipedia.org/wiki/Peano_axioms
 struct Close;
 
+type Id = String;
+
 #[tylift]
-pub enum Choose {
+pub enum ChannelChoice {
     Left,
     Right,
 }
 
-#[tylift]
-pub enum Offer {
-    Left,
-    Right,
+pub struct Channel<S>
+where
+    S: ChannelChoice,
+{
+    n_left: i32,
+    n_right: i32,
+    //parameterize state by a type that is not used in types defn
+    phantom: PhantomData<S>,
+}
+
+pub type LeftChannel = Channel<Left>;
+pub type RightChannel = Channel<Right>;
+
+impl<S: ChannelChoice> Channel<S> {
+    pub fn new_channel_left() -> LeftChannel {
+        Channel {
+            n_left: 0,
+            n_right: 0,
+            phantom: PhantomData,
+        }
+    }
+    pub fn new_channel_right() -> RightChannel {
+        Channel {
+            n_left: 0,
+            n_right: 0,
+            phantom: PhantomData,
+        }
+    }
+
+    pub fn get_left(&self) -> i32 {
+        let left = self.n_left;
+        let left_ptr: *mut i32 = Box::into_raw(Box::new(left));
+        println!("Pointer at creation : {:p}", left_ptr);
+        left
+    }
+
+    pub fn get_right(&self) -> i32 {
+        let right = self.n_right;
+        let right_ptr: *mut i32 = Box::into_raw(Box::new(right));
+        println!("Pointer at creation : {:p}", right_ptr);
+        right
+    }
+}
+
+impl Channel<Left> {
+    fn increment_left(&mut self) {
+        self.n_left += 1;
+    }
+
+    fn switch_right(mut self) -> Channel<Right> {
+        Channel {
+            n_left: self.n_left,
+            n_right: self.n_right,
+            phantom: PhantomData,
+        }
+    }
+
+    fn reset_left(mut self) -> Channel<Left> {
+        self.n_left = 0;
+        Channel {
+            n_left: self.n_left,
+            n_right: self.n_right,
+            phantom: PhantomData,
+        }
+    }
+}
+
+impl Channel<Right> {
+    fn increment_right(&mut self) {
+        self.n_right += 1;
+    }
+
+    fn switch_left(mut self) -> Channel<Left> {
+        Channel {
+            n_left: self.n_left,
+            n_right: self.n_right,
+            phantom: PhantomData,
+        }
+    }
+
+    fn reset_right(mut self) -> Channel<Right> {
+        self.n_right = 0;
+        Channel {
+            n_left: self.n_left,
+            n_right: self.n_right,
+            phantom: PhantomData,
+        }
+    }
 }
 
 //pub struct Chan<Env, Protocol>(Sender<*mut u8>, Receiver<*mut u8>, PhantomData<(Env, Protocol)>);
 
-struct Ping;
-type PingServer = Label<Offer<Send<Ping, Recv<Ping, Goto<Z>>>, Close>>;
+//struct Ping;
+//type PingServer = Label<Offer<Send<Ping, Recv<Ping, Goto<Z>>>, Close>>;
 
 fn example_ping_server() {
     //    let (c, _) : (Chan<(), PingServer>,
