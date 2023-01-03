@@ -1,3 +1,5 @@
+use crate::error;
+
 use std::marker::PhantomData;
 
 use tylift::tylift;
@@ -74,11 +76,18 @@ impl<S: ChannelChoice> Channel<S> {
 }
 
 impl Channel<Left> {
-    fn increment_left(&mut self) {
+    pub fn increment_left(&mut self) {
         self.n_left += 1;
     }
 
-    fn switch_right(mut self) -> Channel<Right> {
+    pub fn increment_right(&self) -> error::ChannelError {
+        error::ChannelError::ChannelOpError {
+            expected: String::from("Right"),
+            found: String::from("Left"),
+        }
+    }
+
+    pub fn switch_right(&mut self) -> Channel<Right> {
         Channel {
             n_left: self.n_left,
             n_right: self.n_right,
@@ -86,7 +95,7 @@ impl Channel<Left> {
         }
     }
 
-    fn reset_left(mut self) -> Channel<Left> {
+    pub fn reset_left(&mut self) -> Channel<Left> {
         self.n_left = 0;
         Channel {
             n_left: self.n_left,
@@ -97,11 +106,18 @@ impl Channel<Left> {
 }
 
 impl Channel<Right> {
-    fn increment_right(&mut self) {
+    pub fn increment_right(&mut self) {
         self.n_right += 1;
     }
 
-    fn switch_left(mut self) -> Channel<Left> {
+    pub fn increment_left(&self) -> error::ChannelError {
+        error::ChannelError::ChannelOpError {
+            expected: String::from("Left"),
+            found: String::from("Right"),
+        }
+    }
+
+    pub fn switch_left(&mut self) -> Channel<Left> {
         Channel {
             n_left: self.n_left,
             n_right: self.n_right,
@@ -109,7 +125,7 @@ impl Channel<Right> {
         }
     }
 
-    fn reset_right(mut self) -> Channel<Right> {
+    pub fn reset_right(&mut self) -> Channel<Right> {
         self.n_right = 0;
         Channel {
             n_left: self.n_left,

@@ -26,6 +26,11 @@ impl Cli {
     }
 }
 
+#[derive(Debug, Error)]
+pub enum ChannelError {
+    #[error("Wrong channel (expected {expected:?}, got {found:?})")]
+    ChannelOpError { expected: String, found: String },
+}
 /*
 impl fmt::Debug for Cli {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
