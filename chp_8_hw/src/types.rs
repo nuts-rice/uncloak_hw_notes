@@ -35,8 +35,8 @@ pub struct Channel<S>
 where
     S: ChannelChoice,
 {
-    n_left: i32,
-    n_right: i32,
+    n_left: u64,
+    n_right: u64,
     //parameterize state by a type that is not used in types defn
     phantom: PhantomData<S>,
 }
@@ -60,16 +60,16 @@ impl<S: ChannelChoice> Channel<S> {
         }
     }
 
-    pub fn get_left(&self) -> i32 {
+    pub fn get_left(&self) -> u64 {
         let left = self.n_left;
-        let left_ptr: *mut i32 = Box::into_raw(Box::new(left));
+        let left_ptr: *mut u64 = Box::into_raw(Box::new(left));
         println!("Pointer at creation : {:p}", left_ptr);
         left
     }
 
-    pub fn get_right(&self) -> i32 {
+    pub fn get_right(&self) -> u64 {
         let right = self.n_right;
-        let right_ptr: *mut i32 = Box::into_raw(Box::new(right));
+        let right_ptr: *mut u64 = Box::into_raw(Box::new(right));
         println!("Pointer at creation : {:p}", right_ptr);
         right
     }

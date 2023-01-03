@@ -1,9 +1,6 @@
-use anyhow::Result;
-
 use thiserror::Error;
 
-use std::io;
-
+/*
 pub struct Cli {
     command: String,
 }
@@ -25,11 +22,15 @@ impl Cli {
         unimplemented!()
     }
 }
+*/
 
 #[derive(Debug, Error)]
 pub enum ChannelError {
     #[error("Wrong channel (expected {expected:?}, got {found:?})")]
     ChannelOpError { expected: String, found: String },
+    //to be used for malicious error
+    #[error("Oh no")]
+    ChannelScaryError,
 }
 /*
 impl fmt::Debug for Cli {
