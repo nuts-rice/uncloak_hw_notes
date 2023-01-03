@@ -9,10 +9,17 @@ mod test {
 
     #[test]
     fn before_zeroize_test() {
+<<<<<<< HEAD
         let mut chan_left = LeftChannel::new_channel_left();
         chan_left.get_left();
         assert_eq!(chan_left.get_left(), 0);
         chan_left.increment_left();
         chan_left.get_left();
+=======
+        let chan_left = LeftChannel::new_channel_left();
+        chan_left.get_left();
+        assert_eq!(chan_left.get_left(), 0);
+        chan_left.increment_left();
+>>>>>>> origin/main
     }
 }
