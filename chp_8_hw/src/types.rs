@@ -81,10 +81,7 @@ impl Channel<Left> {
     }
 
     pub fn increment_right(&self) -> error::ChannelError {
-        error::ChannelError::ChannelOpError {
-            expected: String::from("Right"),
-            found: String::from("Left"),
-        }
+        error::ChannelError::ChannelOpError
     }
 
     pub fn switch_right(&mut self) -> Channel<Right> {
@@ -111,10 +108,7 @@ impl Channel<Right> {
     }
 
     pub fn increment_left(&self) -> error::ChannelError {
-        error::ChannelError::ChannelOpError {
-            expected: String::from("Left"),
-            found: String::from("Right"),
-        }
+        error::ChannelError::ChannelOpError
     }
 
     pub fn switch_left(&mut self) -> Channel<Left> {

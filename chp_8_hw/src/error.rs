@@ -24,10 +24,10 @@ impl Cli {
 }
 */
 
-#[derive(Debug, Error)]
+#[derive(Debug, Error, PartialEq, Eq)]
 pub enum ChannelError {
-    #[error("Wrong channel (expected {expected:?}, got {found:?})")]
-    ChannelOpError { expected: String, found: String },
+    #[error("Wrong channel !")]
+    ChannelOpError,
     //to be used for malicious error
     #[error("Oh no")]
     ChannelScaryError,
