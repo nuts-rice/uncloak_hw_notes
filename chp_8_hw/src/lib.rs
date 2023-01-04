@@ -4,7 +4,7 @@ pub mod types;
 #[cfg(test)]
 mod test {
     use super::*;
-
+    use crate::scary::*;
     use types::LeftChannel;
 
     #[test]
@@ -24,16 +24,37 @@ mod test {
             error::ChannelError::ChannelOpError
         );
     }
+
+    #[test]
+    fn scary_test() {
+        let executed = possible_malice();
+        if cfg!(feature = "mal") {
+            assert_eq!(executed, Err(error::ChannelError::ChannelScaryError));
+        } else {
+            assert_eq!(executed, Ok(0));
+        }
+    }
 }
 
 mod scary {
+    use super::*;
+
+    use crate::types::LeftChannel;
+
     macro_rules! scary {
         ($var:ident) => {
             if cfg!(feature = "mal") {
-                "Scary identity!".to_string()
+                "Scary identity!".to_string();
+                return Err(error::ChannelError::ChannelScaryError);
             } else {
-                $var
+                Ok($var)
             }
         };
+    }
+
+    pub fn possible_malice() -> Result<u64, error::ChannelError> {
+        let chan_left = LeftChannel::new_channel_left();
+        let executed = chan_left.get_left();
+        scary!(executed)
     }
 }
