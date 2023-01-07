@@ -35,6 +35,36 @@ mod test {
         }
     }
 }
+/*
+    #[test]
+    fn zeroize_test() {
+        let mut chan_left = Zeroizing::LeftChannel::new_channel_left();
+        chan_left.increment_left();
+    }
+}
+*/
+
+//this is a sort of distinguisher (see Session 3 notes) for evaluating a secret
+//if we evaluate on a specific length for SECRET, and it takes longer (probably by using cargo
+//bench) to evaluate, then
+//SECRET must be longer!
+
+pub mod secret {
+    use super::*;
+    pub const SECRET: u64 = 123456789012345678;
+
+    pub fn branch_secret(guess: u64) {
+        let mut left_chan = types::LeftChannel::new_channel_left();
+        let mut right_chan = types::RightChannel::new_channel_right();
+        for _i in 0..=999 {
+            if guess == SECRET {
+                left_chan.increment_left();
+            } else {
+                right_chan.increment_right();
+            }
+        }
+    }
+}
 
 mod scary {
     use super::*;

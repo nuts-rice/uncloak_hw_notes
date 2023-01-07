@@ -4,6 +4,8 @@ use std::marker::PhantomData;
 
 use tylift::tylift;
 
+//TODO: try Box and zeroize
+
 //SessionType::==
 //recieve message type *t*
 //send message type *t*
@@ -19,8 +21,8 @@ struct Recv<T, S>(PhantomData<(T, S)>);
 //struct Choose<Left, Right>(PhantomData<(Left, Right)>);
 struct Label<S>(PhantomData<S>);
 struct Goto<N>(PhantomData<N>);
-struct Z;
-struct S<N>(PhantomData<N>); //check peano encoding here: https://en.wikipedia.org/wiki/Peano_axioms
+
+//check peano encoding here: https://en.wikipedia.org/wiki/Peano_axioms
 struct Close;
 
 type Id = String;
@@ -31,6 +33,7 @@ pub enum ChannelChoice {
     Right,
 }
 
+#[derive(Debug)]
 pub struct Channel<S>
 where
     S: ChannelChoice,
@@ -52,6 +55,7 @@ impl<S: ChannelChoice> Channel<S> {
             phantom: PhantomData,
         }
     }
+
     pub fn new_channel_right() -> RightChannel {
         Channel {
             n_left: 0,
@@ -99,6 +103,12 @@ impl Channel<Left> {
             n_right: self.n_right,
             phantom: PhantomData,
         }
+    }
+}
+
+impl<S: ChannelChoice> Drop for Channel<S> {
+    fn drop(&mut self) {
+        unimplemented!()
     }
 }
 

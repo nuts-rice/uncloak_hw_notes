@@ -20,3 +20,11 @@ clap = { version = "4.0.32", features = ["derive"] }
 
 [features]
 mal = []
+
+[dev-dependencies]
+criterion = "0.3"
+test-log = {version = "0.2", default-features = false, features = ["trace"]}
+
+[[bench]]
+name = "bench"
+harness = false

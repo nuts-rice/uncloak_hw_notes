@@ -77,3 +77,34 @@
 -
 -
 - # Lecture
+- Cryptographic agility: example of SGX not being so agile lol
+- Main focus of this week is COMPILE TIME + Zeroise and Secrecy, Subtle!!!
+- Rust: tries to be constant or compile time and not leak data about secrets
+- Biggest error for devs: plaintext disclosure! so we have to zero memory!
+- cRYPTOGRAPHIC DOOM PRINCIPLE: authenticate then encrpyt or whatever sequence
+- Tools: Inline Assembly! (Should learn this)
+	- Might be slow to figure out all this
+	- Might be better to use other things like...
+- Generic array:
+	- Figure out what a struct does at compiler time when we specify size
+- Const generics! (Read more about it)
+	- but not enough to do what Generic Arrays does
+	- Should be able to declare a struct with compile time gurantees
+	- Non-zero integers (evaluate at compile time that something isn't zero)
+- Generic const expressions??? (What the heck are those! Figure them out)
+	- Do the logic at compile time
+	- Avoid footguns that arise at execution time
+- used in collabration with typenum!
+	- single values encoded as types, evealuated at compile time
+- we can also test to `assert_static` for functions!
+- Traits:
+	- can something be compared for equality at compile time? Theres a trait for that
+- assmbly verification tools!
+- Flux type language!!!
+- Grug brained developer lol
+- HW:
+	- PhantomData: Compile-time tool that helps with types whether something holds a val or not
+	- Tylift: Enumeration over structs or types
+	- Features: Malicious features! Good for testing for Byzantines (like validators not attesting?)
+	-
+	-
