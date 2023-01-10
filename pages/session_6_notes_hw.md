@@ -1,0 +1,9 @@
+-
+-
+-
+-
+-
+-
+- # Notes on reading
+	- [Why does cryptographic software fail? ](https://people.csail.mit.edu/nickolai/papers/lazar-cryptobugs.pdf)
+		-
