@@ -6,4 +6,13 @@
 -
 - # Notes on reading
 	- [Why does cryptographic software fail? ](https://people.csail.mit.edu/nickolai/papers/lazar-cryptobugs.pdf)
-		-
+		- storing passwords/keys in plaintext has a precedent before cryptocurrency wallets, believe it or not.
+		- In fact, in an analysis of cryptography bugs, most are plaintext disclousure
+		- a big proportion is also man-in-the-middle attacks where incorrect implementations or misuse of authenticated cryptography can let ppl tamper with encrypted messages
+		- some applications like curl [https://ostif.org/the-ostif-audit-of-curl-with-trail-of-bits-is-complete/] dont authenticate SSL or TLS certificates correctly
+		- Low encryption strength:
+			- This might include encryption logic errors which don't anticipate characters of specific types and propogate unexpected behavior
+			- Obsolete and weak encryption algorithms might be included too
+			- ppl also hard code encryption keys. don't assume someone can't de-compile the executables and find keys in the bytecode!
+		- Insuffiecent randomness:
+			- many impls will use psuedo-random number gen (takes seed of true randomness) and deterministly outputs stream of bits which were used as random. For a cryptographic system that uses PRNG: need a good algorith m and a good seed
