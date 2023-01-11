@@ -6,21 +6,23 @@ struct GenArrayWrapper<T, N: ArrayLength<T>> {
 
 impl<T, N> GenArrayWrapper<T, N>
 where
-    T: Default,
+    T: Default + PartialEq,
     N: ArrayLength<T>,
 {
     fn new() -> Self {
-        let mut array = GenericArray::<T, N>::default();
-        let mut this = Self { inner: array };
-        this
+        let array = GenericArray::<T, N>::default();
+
+        Self { inner: array }
     }
 
-    fn len(&self) -> &usize {
-        &self.len()
+    fn len(&self) -> usize {
+        self.len()
     }
 
-    fn get_index(val: &T) -> u8 {
-        unimplemented!()
+    fn get_index(&self, val: &T) {
+        let _i = 0;
+        let index = self.inner.iter().position(|t| t == val).unwrap();
+        println!("{}", index);
     }
 }
 
