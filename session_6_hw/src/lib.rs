@@ -1,5 +1,7 @@
 use generic_array::{ArrayLength, GenericArray};
 
+pub mod rng;
+
 struct GenArrayWrapper<T, N: ArrayLength<T>> {
     inner: GenericArray<T, N>,
 }

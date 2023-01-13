@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 generic-array = "0.14.6"
 typenum = "1.16.0"
+rand = "0.8.5"
+rand_chacha = "0.3.1"

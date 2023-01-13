@@ -16,3 +16,7 @@
 			- ppl also hard code encryption keys. don't assume someone can't de-compile the executables and find keys in the bytecode!
 		- Insuffiecent randomness:
 			- many impls will use psuedo-random number gen (takes seed of true randomness) and deterministly outputs stream of bits which were used as random. For a cryptographic system that uses PRNG: need a good algorith m and a good seed
+	- [CryptoRng](https://rust-random.github.io/rand/rand/trait.CryptoRng.html)
+		- So CSPRNGs have the property that polynomial time algorithms should not predict the next bit with probability greater than 50%
+		- can also not be computationally feasable to reconstruct *reversible*
+		-
