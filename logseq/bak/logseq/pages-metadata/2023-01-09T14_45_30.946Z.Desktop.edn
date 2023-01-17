@@ -57,63 +57,61 @@
   :block/updated-at 1669668999548}
  {:block/name
   "https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent",
-  :block/created-at 1673275151314,
-  :block/updated-at 1673275151314}
+  :block/created-at 1672608659368,
+  :block/updated-at 1672608659368}
  {:block/name
   "https://github.com/munksgaard/session-types/blob/master/src/lib.rs",
-  :block/created-at 1673275151318,
-  :block/updated-at 1673275151318}
+  :block/created-at 1672608696632,
+  :block/updated-at 1672608696632}
  {:block/name
   "https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf",
-  :block/created-at 1673275151316,
-  :block/updated-at 1673275151316}
+  :block/created-at 1672608659370,
+  :block/updated-at 1672608659370}
  {:block/name "https://stanford-cs242.github.io",
-  :block/created-at 1673275151076,
-  :block/updated-at 1673275151076}
+  :block/created-at 1672270436254,
+  :block/updated-at 1672270436254}
  {:block/name "https://stanford-cs242.github.io/f19",
-  :block/created-at 1673275151084,
-  :block/updated-at 1673275151084}
+  :block/created-at 1672270436257,
+  :block/updated-at 1672270436257}
  {:block/name "https://stanford-cs242.github.io/f19/lectures",
-  :block/created-at 1673275151091,
-  :block/updated-at 1673275151091}
+  :block/created-at 1672270436262,
+  :block/updated-at 1672270436262}
  {:block/name
   "https://stanford-cs242.github.io/f19/lectures/08-2-typestate",
-  :block/created-at 1673275151098,
-  :block/updated-at 1673275151098}
+  :block/created-at 1672270347147,
+  :block/updated-at 1672270347147}
  {:block/name
   "https://stanford-cs242.github.io/f19/lectures/09-1-session-types",
-  :block/created-at 1673275151317,
-  :block/updated-at 1673275151317}
+  :block/created-at 1672608659371,
+  :block/updated-at 1672608659371}
+ {:block/name
+  "https://www.di.fc.ul.pt/~vv/papers/honda.vasconcelos.kubo_language-primitives.pdf",
+  :block/created-at 1672608659367,
+  :block/updated-at 1672608659367}
  {:block/name "in-progress",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
- {:block/name "jan 10th, 2023",
-  :block/created-at 1673377625747,
-  :block/updated-at 1673377625747}
- {:block/name "jan 11th, 2023",
-  :block/created-at 1673445852619,
-  :block/updated-at 1673445852619}
- {:block/name "jan 12th, 2023",
-  :block/created-at 1673534852789,
-  :block/updated-at 1673534852789}
- {:block/name "jan 13th, 2023",
-  :block/created-at 1673634008829,
-  :block/updated-at 1673634008829}
- {:block/name "jan 14th, 2023",
-  :block/created-at 1673703674736,
-  :block/updated-at 1673703674736}
- {:block/name "jan 15th, 2023",
-  :block/created-at 1673797035740,
-  :block/updated-at 1673797035740}
- {:block/name "jan 16th, 2023",
-  :block/created-at 1673885012764,
-  :block/updated-at 1673885012764}
- {:block/name "jan 17th, 2023",
-  :block/created-at 1673961056735,
-  :block/updated-at 1673961056735}
- {:block/name "jan 9th, 2023",
-  :block/created-at 1673275151151,
-  :block/updated-at 1673275151151}
+ {:block/name "jan 1st, 2023",
+  :block/created-at 1672608658979,
+  :block/updated-at 1672608658979}
+ {:block/name "jan 2nd, 2023",
+  :block/created-at 1672672508646,
+  :block/updated-at 1672672508646}
+ {:block/name "jan 3rd, 2023",
+  :block/created-at 1672754649694,
+  :block/updated-at 1672754649694}
+ {:block/name "jan 4th, 2023",
+  :block/created-at 1672839115768,
+  :block/updated-at 1672839115768}
+ {:block/name "jan 5th, 2023",
+  :block/created-at 1672927800791,
+  :block/updated-at 1672927800791}
+ {:block/name "jan 6th, 2023",
+  :block/created-at 1673008903718,
+  :block/updated-at 1673008903718}
+ {:block/name "jan 7th, 2023",
+  :block/created-at 1673113549814,
+  :block/updated-at 1673113549814}
  {:block/name "later",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -141,12 +139,6 @@
  {:block/name "session_5_notes_hw",
   :block/created-at 1671569213091,
   :block/updated-at 1673032175694}
- {:block/name "session_6_notes_hw",
-  :block/created-at 1673377690211,
-  :block/updated-at 1673545274275}
- {:block/name "session_7_notes_hw",
-  :block/created-at 1673961203772,
-  :block/updated-at 1673964109583}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
