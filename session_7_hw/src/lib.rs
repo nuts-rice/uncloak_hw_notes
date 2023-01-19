@@ -58,6 +58,17 @@ mod miller_rabin {
     }
 }
 
+#[cfg(test)]
+mod test {
+    use super::*;
+    use crate::eea::extended_euclid;
+    #[test]
+    fn eea_test() {
+        let executed = extended_euclid(153, 87);
+        assert_eq!((3, 4, -7), executed);
+    }
+}
+
 fn main() {
     println!("Hello, world!");
 }

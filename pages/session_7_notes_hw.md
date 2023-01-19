@@ -1,4 +1,7 @@
 - # Book notes:
+-
+- Chapter 9:
+-
 - chapter 10:
 - Primes
 	- 10.1 Divisibility and primes
@@ -55,3 +58,52 @@
 		- 10.3.2 Multiplication
 			- First compute *ab* as interger and then take result modulo *p*.
 			- *ab* can be as large as (p-1)^2 = p^2 - *2p* + 1
+		- 10.3.3
+			- Groups and Finite Fields
+				- numbers modulo a prime *p* are a *finite field* and refreed as "mod *p*"
+					- can add and subtract any multiple of *p* without changing result
+					- all results in range of 0,1... p-1
+					- algebraic rules of ints still apply
+					- use the notation *Z_p* to refer to the finite field modulo *p*
+					- #+BEGIN_QUOTE
+					  defn: a group- set of numbers toghether with an operations such as addition or multiplication.
+					  #+END_QUOTE
+					- #+BEGIN_QUOTE
+					  multiplictive group modulo *p* is numbers 1..p-1 together with multiplication modulo *p* to form a group
+					  #+END_QUOTE
+			- 10.3.5 extended euclid algorithm
+				- need to compute division modulo *p*. we can  do this via the extended euclidian algorithm. while computing *greatest common divisor(a, b)* we can also find two integers u and v such that *gcd(a, b) = ua + vb*. This allows us to compute *a/b (mod p)*.
+				- ``` 
+				  Extended GCD
+				  input  a: positive int, b: positive int
+				  output k:the greatest common divisor of a and b (u, v) ints such that ua + vb = k
+				  	assert a>=0 ^ b >= 0
+				      (c, d) <- (a, b)
+				      (u_c, v_c, u_d, v_d) <- (1,0,0,1)
+				      while c != 0 {
+				      //invariant (u_c*a + v_c*b = c) ^ (u_d*a + v_d*b = d)
+				      	q <- [d/c]
+				          (c, d) <- (d - q*c, c)
+				          (u_c,v_c,u_d,v_d) <- (u_d - qu_c, v_d - qv_c, u_c, v_c)
+				       od
+				       return d,(u_d, v_d)
+				      }
+				  ```
+			- if we know the *ExtendedGCD(b,p)* of *b* and *p* is 1, because p is prime and provides two numbers u and v such that *ub* + *vp* = *gcd(b, p)* = 1 and we can thus have inverse modulo a prime *p*, which means we can compute division modulo *p*,
+			- togerther with addition and subtraction, multiplication, this means we have a a finite field modulo *p*
+		- 10.3.6 Working modulo 2
+			- addition modulo 2 is exactly the exlcusive-or (XOR)
+		- 10.4 Large primes
+-
+-
+-
+- # Homework
+- chp 9:
+	- Entropy is...a property of matter,
+	- It's a measure of randomness or how we can't predict/are uncertain what the next bit in a sequence
+	- average number of bits you would need to specify the value if you could use an ideal compression algorithm
+	- #+BEGIN_QUOTE
+	  Why does a combination (eg. by XOR, or by hash-concatenation as on p145, Reseed) of two or more independent input-streams *{S_1..S_n}* of entropy has at least *H(X)>= max{S_i}*entropy; that is, why a combination of entropy streams is always at least as entropic as the most entropic stream.
+	  #+END_QUOTE
+	- Because of diffusion within any sequence of bits??
+	-
