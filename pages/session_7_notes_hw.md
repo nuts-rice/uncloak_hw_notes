@@ -106,4 +106,34 @@
 	  Why does a combination (eg. by XOR, or by hash-concatenation as on p145, Reseed) of two or more independent input-streams *{S_1..S_n}* of entropy has at least *H(X)>= max{S_i}*entropy; that is, why a combination of entropy streams is always at least as entropic as the most entropic stream.
 	  #+END_QUOTE
 	- Because of diffusion within any sequence of bits??
-	-
+-
+- # Lecture: Asymetric cryptography
+- Chapter 11 + 12
+- Diffie hellman: we need a rigirous defn of group is:
+- Can Add(), Multiply(), Inverse()
+- Cyclic groups give us elements we can do cryptography with, with maximum bit length!
+- Every group has an *Identity* and *Closure*
+- Prime groups (Intergers modulo a prime too) are upper bounded by bits used to describe them
+- Any multiplicative group of modulo prime
+- Diffie hellma: sends a group element to power of X, has a known public key to be authenticated by certificate authority.
+	- This can then be used to share a secret by exponatie with someone else's private key
+	- Discrete log problems come up often in cryptography!
+- When we have modulo prime group, we always have p - 1
+- Group element to power of order, every element of that will be Identity of that group which is 1, Fermats little theorem
+- polynomials also can work as group, with tuple of the coefficents!
+	- coefficents are elements of the group
+- Man in the middle attacks on diffie hellman?
+	- If we dont have way to authenticate an individual, they have to trust certificate authority
+	- can claim to be an individual and pretend to be parties exchanging keys
+	- certificate authority signs public keys
+	- if advesory chooses the generator, then they can narrow the field of possible values for shared secrets, oh no!
+	- insecure implementation of generator might not check if group generated is small sub-group (where only value could be the *identity* of group)
+- Safe primes
+	- Sofie germain primes!
+	- No elements should have small order!
+	- if a bit size of n, we want at least order of n - 1
+	- scaling up by using specific generators to repersent the elements of group
+	- Legendre symbol! look it up i guess?
+- section 11.8 is good review of this chapter
+- chapter 12:
+	- TODO I had to go before we covered this in lecture whoops

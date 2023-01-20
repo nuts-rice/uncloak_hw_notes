@@ -95,7 +95,7 @@ mod test {
         let mut prime_flag = 0;
         for p in &primes {
             product *= p;
-            prime_flag |= miller_rabin(*p as u64, &primes);
+            dbg!(miller_rabin(*p as u64, &primes));
         }
         assert_eq!(prime_flag, 0)
     }
