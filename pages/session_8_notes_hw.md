@@ -1,0 +1,51 @@
+- # Lecture: Asymetric cryptography
+- Chapter 11 + 12
+- Diffie hellman: we need a rigirous defn of group is:
+- Can Add(), Multiply(), Inverse()
+- Cyclic groups give us elements we can do cryptography with, with maximum bit length!
+- Every group has an *Identity* and *Closure*
+- Prime groups (Intergers modulo a prime too) are upper bounded by bits used to describe them
+- Any multiplicative group of modulo prime
+- Diffie hellma: sends a group element to power of X, has a known public key to be authenticated by certificate authority.
+	- This can then be used to share a secret by exponatie with someone else's private key
+	- Discrete log problems come up often in cryptography!
+- When we have modulo prime group, we always have p - 1
+- Group element to power of order, every element of that will be Identity of that group which is 1, Fermats little theorem
+- polynomials also can work as group, with tuple of the coefficents!
+	- coefficents are elements of the group
+- Man in the middle attacks on diffie hellman?
+	- If we dont have way to authenticate an individual, they have to trust certificate authority
+	- can claim to be an individual and pretend to be parties exchanging keys
+	- certificate authority signs public keys
+	- if advesory chooses the generator, then they can narrow the field of possible values for shared secrets, oh no!
+	- insecure implementation of generator might not check if group generated is small sub-group (where only value could be the *identity* of group)
+- Safe primes
+	- Sofie germain primes!
+	- No elements should have small order!
+	- if a bit size of n, we want at least order of n - 1
+	- scaling up by using specific generators to repersent the elements of group
+	- Legendre symbol! look it up i guess?
+- section 11.8 is good review of this chapter
+- chapter 12:
+	- TODO I had to go before we covered this in lecture whoops
+	- RSA:
+		- RSA GTFO paper is worth a read!
+		-
+- # exercises
+- *x* mod 30 = 2, what is obtained about *x* mod 2, *x* mod 3 and *x* mod 5, what about *x* mod 7?
+	- using Chinese Remainder theroem that we can obtain  2 is equivlant to *x* mod 2 and 2 is equivalnt to *x*  mod 3
+	- so 2 mod 30
+	- mod 2, mod 3 and 5
+- You're Eve, intercepting a message from Alice to Bob. Alice asked Bob to choose a prime larger than 30 to construct a prime field. You choose *p* = 31, *g* = 2. How many unique choices of exponent *x* in *g^x* equivalnt to *a* mod *p* does Alice now have?  A unique choice is any uniquely obtainable values for *a*. For instance 2^17 is equivlant to 4 mod 31, there for 2^23 which is 4 is not unique
+	- so 2 ^ *x* would be equivlant to *a* mod 31, but *x* has to be coprime within that field and does not common divisors
+	- so... i guess we should find totient function to find...
+	- (2 ^ 30)(30) all divisors p - 1
+	-
+	- idk check section 11.9 i think
+- what if bob had chosen *p* = 83, *g* = 2? how many unique choices of *x* are there now?
+- 576001 is prime with factoriztion *p* - 1 = 2^9 * 3^2 * 5^3. Find a generator *g* != 1 with order |g| < 10
+	- using fermats test we would have 576001 ^ *p* - 1
+		- *x*^57600 - 1 = 0 (mod 576001)
+	- for every divisor *d*/57600 , *Z_p* contains *d* elements of order *d*
+	- factorized as 2^9 * 3^2 * 5^3 = 0 mod 576001
+	- so 576001 - 1 = 9^2 * 2 ^ 3 * 3^5

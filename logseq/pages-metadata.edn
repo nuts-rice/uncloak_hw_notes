@@ -120,6 +120,15 @@
  {:block/name "jan 20th, 2023",
   :block/created-at 1674236285738,
   :block/updated-at 1674236285738}
+ {:block/name "jan 21st, 2023",
+  :block/created-at 1674313328713,
+  :block/updated-at 1674313328713}
+ {:block/name "jan 22nd, 2023",
+  :block/created-at 1674400265761,
+  :block/updated-at 1674400265761}
+ {:block/name "jan 23rd, 2023",
+  :block/created-at 1674492464785,
+  :block/updated-at 1674492464785}
  {:block/name "jan 9th, 2023",
   :block/created-at 1673275151151,
   :block/updated-at 1673275151151}
@@ -155,7 +164,10 @@
   :block/updated-at 1673545274275}
  {:block/name "session_7_notes_hw",
   :block/created-at 1673961203772,
-  :block/updated-at 1674238752553}
+  :block/updated-at 1674492595703}
+ {:block/name "session_8_notes_hw",
+  :block/created-at 1674492669767,
+  :block/updated-at 1674501004372}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
