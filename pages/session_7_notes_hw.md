@@ -107,6 +107,7 @@
 	  #+END_QUOTE
 	- Because of diffusion within any sequence of bits??
 -
+-
 - # Lecture: Asymetric cryptography
 - Chapter 11 + 12
 - Diffie hellman: we need a rigirous defn of group is:
@@ -137,3 +138,7 @@
 - section 11.8 is good review of this chapter
 - chapter 12:
 	- TODO I had to go before we covered this in lecture whoops
+	- RSA:
+		- RSA GTFO paper is worth a read!
+		-
+		-

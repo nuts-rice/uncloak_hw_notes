@@ -129,6 +129,9 @@
  {:block/name "jan 23rd, 2023",
   :block/created-at 1674492464785,
   :block/updated-at 1674492464785}
+ {:block/name "jan 24th, 2023",
+  :block/created-at 1674589246719,
+  :block/updated-at 1674589246719}
  {:block/name "jan 9th, 2023",
   :block/created-at 1673275151151,
   :block/updated-at 1673275151151}
@@ -167,7 +170,7 @@
   :block/updated-at 1674492595703}
  {:block/name "session_8_notes_hw",
   :block/created-at 1674492669767,
-  :block/updated-at 1674501004372}
+  :block/updated-at 1674599146015}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}

@@ -1,3 +1,31 @@
+- # Book notes:
+- cvhapter 12: RSA
+- 12.2 Chinese Remainder theorem
+	- Doing computations modulo a composite number *n*
+	- we can do this with Chinese Remainder Theroem
+	- numbers modulo *n* are 0, 1...n -1
+	- for every pair *x* in *Z_n*, we can compute the pair (*x* mod *p*, *x* mod *q*)
+	- Chinese remainder theorem states you can compute inverse function:
+		- If we know (*x* mod *p*, *x* mod *q*) we can reconstruct *x*
+		- (*a*, *b*) := (*x* mod *p*, *x* mod *q*)
+		- gotta make sure theres no *x'* and *x* which result in (a, b)
+		- let *d* := *x*-*x'* mod *p* = (*x* mod *p*) - (*x'* mod *p*) = *a* - *a* = 0
+		- so *d* is a multiple of *p* and multiple of *q*
+		- *d* is a multiple of least common multiple(*p*, *q*)
+	- We can also use the *Garner's formula*
+	- ``` 
+	  x = (((a - b)q^-1 mod p)) mod p) * q + b
+	  ```
+	- *q^-1* mod *p* term is constant that depends only on *p*  and *q*.
+	- we can divide modulo *p* and therefore compuite (1/*q* mod *p*) or (*q*^-1 mod *p*)
+	- gives a result *x* that is in the right range and for which (a, b) = (*x* mod *p*, *x* mod *q*)
+	- requires one substraction modulo p, one multiplication modulo p, one full multiplication and addition
+- 12.4 RSA defined
+	- randomly choose 2 different large primes *p* and *q* and compute *n*=*pq*
+	- modulus *n* ends up being twice as long as p and q
+	- use two different exponents called *e* and *d*, *ed* = 1(mod *t*)
+	- where *t*:= leastcommonmultiple(*p* - 1, *q* - 1)
+	-
 - # Lecture: Asymetric cryptography
 - Chapter 11 + 12
 - Diffie hellman: we need a rigirous defn of group is:
