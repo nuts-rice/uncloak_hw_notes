@@ -57,84 +57,45 @@
   :block/updated-at 1669668999548}
  {:block/name
   "https://doc.rust-lang.org/nomicon/other-reprs.html#reprtransparent",
-  :block/created-at 1673275151314,
-  :block/updated-at 1673275151314}
+  :block/created-at 1674841810822,
+  :block/updated-at 1674841810822}
  {:block/name
   "https://github.com/munksgaard/session-types/blob/master/src/lib.rs",
-  :block/created-at 1673275151318,
-  :block/updated-at 1673275151318}
+  :block/created-at 1674841810827,
+  :block/updated-at 1674841810827}
  {:block/name
   "https://munksgaard.me/papers/laumann-munksgaard-larsen.pdf",
-  :block/created-at 1673275151316,
-  :block/updated-at 1673275151316}
+  :block/created-at 1674841810825,
+  :block/updated-at 1674841810825}
  {:block/name "https://stanford-cs242.github.io",
-  :block/created-at 1673275151076,
-  :block/updated-at 1673275151076}
+  :block/created-at 1674841809249,
+  :block/updated-at 1674841809249}
  {:block/name "https://stanford-cs242.github.io/f19",
-  :block/created-at 1673275151084,
-  :block/updated-at 1673275151084}
+  :block/created-at 1674841809275,
+  :block/updated-at 1674841809275}
  {:block/name "https://stanford-cs242.github.io/f19/lectures",
-  :block/created-at 1673275151091,
-  :block/updated-at 1673275151091}
+  :block/created-at 1674841809379,
+  :block/updated-at 1674841809379}
  {:block/name
   "https://stanford-cs242.github.io/f19/lectures/08-2-typestate",
-  :block/created-at 1673275151098,
-  :block/updated-at 1673275151098}
+  :block/created-at 1674841809402,
+  :block/updated-at 1674841809402}
  {:block/name
   "https://stanford-cs242.github.io/f19/lectures/09-1-session-types",
-  :block/created-at 1673275151317,
-  :block/updated-at 1673275151317}
+  :block/created-at 1674841810826,
+  :block/updated-at 1674841810826}
  {:block/name "in-progress",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
- {:block/name "jan 10th, 2023",
-  :block/created-at 1673377625747,
-  :block/updated-at 1673377625747}
- {:block/name "jan 11th, 2023",
-  :block/created-at 1673445852619,
-  :block/updated-at 1673445852619}
- {:block/name "jan 12th, 2023",
-  :block/created-at 1673534852789,
-  :block/updated-at 1673534852789}
- {:block/name "jan 13th, 2023",
-  :block/created-at 1673634008829,
-  :block/updated-at 1673634008829}
- {:block/name "jan 14th, 2023",
-  :block/created-at 1673703674736,
-  :block/updated-at 1673703674736}
- {:block/name "jan 15th, 2023",
-  :block/created-at 1673797035740,
-  :block/updated-at 1673797035740}
- {:block/name "jan 16th, 2023",
-  :block/created-at 1673885012764,
-  :block/updated-at 1673885012764}
- {:block/name "jan 17th, 2023",
-  :block/created-at 1673961056735,
-  :block/updated-at 1673961056735}
- {:block/name "jan 18th, 2023",
-  :block/created-at 1674065835702,
-  :block/updated-at 1674065835702}
- {:block/name "jan 19th, 2023",
-  :block/created-at 1674135054729,
-  :block/updated-at 1674135054729}
- {:block/name "jan 20th, 2023",
-  :block/created-at 1674236285738,
-  :block/updated-at 1674236285738}
- {:block/name "jan 21st, 2023",
-  :block/created-at 1674313328713,
-  :block/updated-at 1674313328713}
- {:block/name "jan 22nd, 2023",
-  :block/created-at 1674400265761,
-  :block/updated-at 1674400265761}
- {:block/name "jan 23rd, 2023",
-  :block/created-at 1674492464785,
-  :block/updated-at 1674492464785}
- {:block/name "jan 24th, 2023",
-  :block/created-at 1674589246719,
-  :block/updated-at 1674589246719}
- {:block/name "jan 9th, 2023",
-  :block/created-at 1673275151151,
-  :block/updated-at 1673275151151}
+ {:block/name "jan 27th, 2023",
+  :block/created-at 1674841808980,
+  :block/updated-at 1674841808980}
+ {:block/name "jan 30th, 2023",
+  :block/created-at 1675102193766,
+  :block/updated-at 1675102193766}
+ {:block/name "jan 31st, 2023",
+  :block/created-at 1675184669711,
+  :block/updated-at 1675184669711}
  {:block/name "later",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}
@@ -163,14 +124,17 @@
   :block/created-at 1671569213091,
   :block/updated-at 1673032175694}
  {:block/name "session_6_notes_hw",
-  :block/created-at 1673377690211,
-  :block/updated-at 1673545274275}
+  :block/created-at 1674841809490,
+  :block/updated-at 1674841809490}
  {:block/name "session_7_notes_hw",
-  :block/created-at 1673961203772,
-  :block/updated-at 1674492595703}
+  :block/created-at 1674841809802,
+  :block/updated-at 1674841809802}
  {:block/name "session_8_notes_hw",
-  :block/created-at 1674492669767,
-  :block/updated-at 1674599146015}
+  :block/created-at 1674841810201,
+  :block/updated-at 1674842380092}
+ {:block/name "session_9_notes_hw",
+  :block/created-at 1674841830538,
+  :block/updated-at 1675198471354}
  {:block/name "todo",
   :block/created-at 1669668999548,
   :block/updated-at 1669668999548}

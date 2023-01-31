@@ -1,0 +1,23 @@
+- # Lecture:
+	- moduular math over primes and composites!!!
+	- lots of finite fields in cryptography!
+		- gives an upper bound to numbers we gotta compute
+		- and have properties to do inverses and transforms with them!
+		- but we still need to do discrete logs which are hard!
+	- Discrete logs: factoring priimes!
+		- we use the CRT!
+- Relay attacks!
+	- if underlying cryptography is sound but infrastructure is compromised!
+	- at time 0...time 1 deliver message
+	- can rearrange messages or tamper
+	- so we need to timestamp!
+	- end of protocol in internet stack of things is 5-10 years good'
+- Forward secrecy! should use ephermeral keys!
+	- if alice uses privKey to advesory, that doesn't leak past info or future info
+-
+- # book notes:
+- Replay attacks:
+- Forward secrecy:
+-
+-
+-

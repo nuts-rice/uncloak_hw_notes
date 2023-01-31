@@ -67,9 +67,11 @@
 - You're Eve, intercepting a message from Alice to Bob. Alice asked Bob to choose a prime larger than 30 to construct a prime field. You choose *p* = 31, *g* = 2. How many unique choices of exponent *x* in *g^x* equivalnt to *a* mod *p* does Alice now have?  A unique choice is any uniquely obtainable values for *a*. For instance 2^17 is equivlant to 4 mod 31, there for 2^23 which is 4 is not unique
 	- so 2 ^ *x* would be equivlant to *a* mod 31, but *x* has to be coprime within that field and does not common divisors
 	- so... i guess we should find totient function to find...
+	- USE LEGRANGE!
 	- (2 ^ 30)(30) all divisors p - 1
-	-
-	- idk check section 11.9 i think
+	- g = 2
+	- idk check section 11.9 i think'
+	- 5 possible elements
 - what if bob had chosen *p* = 83, *g* = 2? how many unique choices of *x* are there now?
 - 576001 is prime with factoriztion *p* - 1 = 2^9 * 3^2 * 5^3. Find a generator *g* != 1 with order |g| < 10
 	- using fermats test we would have 576001 ^ *p* - 1
@@ -77,3 +79,4 @@
 	- for every divisor *d*/57600 , *Z_p* contains *d* elements of order *d*
 	- factorized as 2^9 * 3^2 * 5^3 = 0 mod 576001
 	- so 576001 - 1 = 9^2 * 2 ^ 3 * 3^5
+-
