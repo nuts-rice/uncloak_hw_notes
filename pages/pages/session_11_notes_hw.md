@@ -68,4 +68,37 @@
 		  #+END_EXAMPLE
 	- ![image.png](../assets/image_1676401088886_0.png)
 - 2.3 Diffie-Hellman key exchange
+	- ![image.png](../assets/image_1676404932341_0.png)
+	- Assume that all info shared between Alice and Bob is public, could be monitered by advesary Eve
+		- Alice and bob agree on large prime *p* and nonzero interger *g* modulo *p*, assume that Eve would know this as well
+		- #+BEGIN_NOTE
+		  best if they choose *g* such that its order in *F_p** is large prime
+		  #+END_NOTE
+		- Next: Alice picks secret interger *a* that she doesn't reveal to anyone, while bob picks interger *b* that is secret. Bob and alice computes:
+		  *A* ≡ *g^a*(mod *p*) and *B* ≡ *g^b* (mod *p*)
+		- Next: exchange computed values, Alices sends *A* to Bob and Bob sends *B* to Alice. Assume Eve can see values of *A* and *B*.
+		- FInally: Bob and Alice use secret intergers to compute:
+		  *A'* ≡ *B^a*(mod *p*) and *B'* ≡ *A^b* (mod *p*)
+		- *A'* ≡ *B^a* ≡ (*g^b*)^*a* ≡ *g^ab* ≡ (*g^a*)^*b* ≡ *A^b*  ≡ *B'* (mod *p*)
+		- #+BEGIN_EXAMPLE
+		  Alice + Bob agree on *p* = 941 and primative root *g* = 627. Alice chooses secret key *a* = 347 and computes *A* = 390 ≡ 627^347(mod 941). Bob chooses secret key *b* = 781 and computes *B* = 691 ≡ 627^781 (mod 941). Alice sends bob the number 390 and Bob sends Alice the number 691. We assume that Eve could see this. Secrets are not transmitted. 
+		  
+		  Then ALice and Bob are able to compute:
+		  470 ≡ 627^347 * 781 ≡ *A^b* ≡ *B^a* (mod 941)
+		  so 470 is their shared secret.
+		  
+		  If Eve were able to see exchange, she could reconstitute ALice and Bob's shared secret by solving either of these congruences:
+		  627^*a* ≡ 390 (mod 941) or 627^*b* ≡ 691 (mod 941),
+		  then find the one of their secret lograthims (exponent)
+		  #+END_EXAMPLE
+		- #+BEGIN_IMPORTANT
+		  Defn: Let *p* be a prime number and *g* and interger. *Diffie-hellman problem* is the problem of computing the value *g^ab* (mod *p*) (shared secret) from known values of *g^a* (mod *p*) and *g^b*(mod *p*)
+		  #+END_IMPORTANT
+		- #+BEGIN_NOTE
+		  DHP and Discrete log problem (DLP) are comparable in difficulty to compute
+		  If Eve can solve DLP, she can compute secret exponents *a* and *b* from intercepted values
+		  *A* = *g^a* and *B* = *g^b*...easy to compute shared keys *g^ab*
+		  But converse is less clear...if can solve DHP, can you easily solve DLP
+		  #+END_NOTE
+- 2.4 ElGaml public key Cryptographic system
 	-
