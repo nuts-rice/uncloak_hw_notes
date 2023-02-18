@@ -101,4 +101,51 @@
 		  But converse is less clear...if can solve DHP, can you easily solve DLP
 		  #+END_NOTE
 - 2.4 ElGaml public key Cryptographic system
+	- Alice begins by publishing info of public key and algorithm
+	- Public key is simply a number, and algorithm is method by which Bob encrypts his messages using Alice's public key. Alice keeps private key *a*, which decrypts messages that have been encrypted with her public key *A*
+	- Bob wants to encrypt a message using Alice's public key *A*. We will assume Bob's message *m* is an interger between 2 and *p*. In order to encrypt *m*, Bob randomly chooses another number *k* modulo *p*. Bob uses *k* to encrypt  one and only one message and then discards it. *k* is an ephemeral key and only exists for encrypting a single number.
+	- Bob takes *m*, ephemeral key *k* and Alice's public key *A* and uses them to compute 
+	  *c_1* ≡ *g^k* (mod  *p*) and *c_2* ≡ *m**A*^*k* (mod *p*)
+	  *g* and *p* are public parameters* and Bob knows this
+	- Alice decrypts this with *a* by computing
+	  *x* ≡ *c_1^a* (mod *p*) and *x^-1* (mod *p*). Alice then multiplies *c_2* by *x^-1* and the resulting value of plaintext *m*
+	- ![image.png](../assets/image_1676655561246_0.png)
+	-
+	- ![image.png](../assets/image_1676653917955_0.png)
+	- So how would Eve decrpt this? Eve knows *p*  and *g* and knows value of *A* ≡ *g^a* (mod *p*)
+-
+-
+- 2.5 Theory of Groups
+	- Multiplication in *F_p** has attributes:
+		- element 1 ∈ *F_p** satisfying 1 * *a* = a for every a ∈ F_p*
+		- every a ∈ F_p* has an inverse *a*^-1 ∈ F_p* satisfying a * a^-1 = a^-1 * a = 1
+		- multiplication is assoacative: a * (b * c)  = (a * b) * c for all a,b,c ∈ F_p*
+		- multiplication is communative: a * b = b * a for all a,b ∈ F_p*
+	- Addition if we replace 0 for 1 and -a for a^-1, all the four properties are still true
+		- #+BEGIN_IMPORTANT
+		  Defn: a *group* consists of set *G* and a rule, which could be * for combining two elements a,b ∈ *G*  to obtain element a * b ∈ *G*. The * operation has to have three properties:
+		  ![image.png](../assets/image_1676756809785_0.png) 
+		  #+END_IMPORTANT
+-
+- # Lecture notes
+	- what we cover next week: probalistic figuring of security!
+	- need to actually do pen and paper!
+	- next week: earlier lectures!
+	- shamir's sharing and pederson commitment vectors
+		- adversary would be commiter that looks for value that probabiliticly searches for hash collisions
+	- Pedersen are zero knowledge proofs
+	- Do signatures by hand! wew!
+-
+- # Homework problems
+	- ![image.png](../assets/image_1676743403530_0.png)
+		- (*c_1*)  = *g^k* (mod *p*) * (*c_2*)
+			- k = 10   
+			  (*c_1*, *c_2*) = (*g^k*, *m*B*^k) mod p
+			                         ≡ (2^10, 12*(2^5)^10 (mod 19) = (17, 15)
+			- Bob then computes: *x* = *c_1*^-1 
+			  17^-1 (mod 19) = 9 = 19 - (1)*17 mod 19 multiplied by c_2 ≡ (c_1^b)       
+			  ≡ (2^5 * 10)^-1
+			  
+			  If adversary could compute *B*^-k...strip *c_2* of encrypted ![image.png](../assets/image_1676754323069_0.png)
+			-
 	-
