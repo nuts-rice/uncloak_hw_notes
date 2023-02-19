@@ -126,7 +126,27 @@
 		  Defn: a *group* consists of set *G* and a rule, which could be * for combining two elements a,b ∈ *G*  to obtain element a * b ∈ *G*. The * operation has to have three properties:
 		  ![image.png](../assets/image_1676756809785_0.png) 
 		  #+END_IMPORTANT
--
+	- Defn: If *G* has finetly many element, we say *G* is a *finite group*. The *order* of *G* is the number of elements in *G*and is denoted by |*G*|
+	- Let *g* be an element of a group *G* and let *x* be a positive interger. Then *g^x* means that we apply group operation *x* times to the element *g*,
+	  *g^x* = g * g * g..... {*x* repitions}
+	  
+	  #+BEGIN_EXAMPLE
+	  Exponiation *g^x* in the group *F_p** has the usual meaning, multipkly *g*  by itself *x* time. But exponiation *g^x* in the group *Z/NZ*means to <ins> add </ins> *g* to itself *x* times.
+	  #+END_EXAMPLE
+	- #+BEGIN_NOTE
+	  Exponiation in a group is repeated application of the group operation to an element of the group
+	  #+END_NOTE
+	- Defn: Let *G* be a group and let *a* ∈ *G* be an element of the group. Suppose there exists a positive interger *d* with the property *a^d* = *e*. The smallest such *d* is called the *order* of *a*. If there is no such *d*, then *a* is said to have *infinite order*
+	- #+BEGIN_NOTE
+	  Let *G* be a finite group. Then every element of *G*  has finite order, Further if *a* ∈ G has order *d* and if *a^k* = *e*, then *d* / *k* 
+	  #+END_NOTE
+	- ![image.png](../assets/image_1676832278096_0.png)
+	- #+BEGIN_NOTE
+	  Lagrange's Theorem: Let *G* be a finite group and *a* ∈ *G* , then the order of *a*  divides order of *G*.
+	  n = |G| is order of *G* and let the *d* be the order of *a*, ie *a^d* is the smallest positive power of *a* that is equal to *e*. Then
+	  *a^n* = *e* and *d*/*n*
+	  #+END_NOTE
+	- ![image.png](../assets/image_1676832496422_0.png)
 - # Lecture notes
 	- what we cover next week: probalistic figuring of security!
 	- need to actually do pen and paper!
