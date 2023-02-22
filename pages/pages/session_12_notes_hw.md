@@ -1,0 +1,4 @@
+- # Book notes
+- 4.0 Combonatrics, probability
+	- 4.1 Basic principles of counting
+	-
