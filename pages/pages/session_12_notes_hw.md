@@ -40,9 +40,102 @@
 						- #+BEGIN_EXPORT latex
 						  {\omega \epsilon \varOmega}\sum Pr(\omega) = 1
 						  #+END_EXPORT
+				- An *event* is a subset of Ω. We assign probability of event *E* ⊂ Ω by setting
+				  
+				  #+BEGIN_EXPORT latex
+				  Pr(E) =  {\omega \epsilon \varOmega}\sum Pr(\omega)
+				  #+END_EXPORT
+				- in Particular Pr(null) = 0, and Pr(Ω) = 1
+				- We say that two events *E* and *F* are disjoint if *E* ∩ *F* = null
+				- Pr(*E* ∪ *F*) = Pr(*E*) + Pr(*F*) if *E* and *F* are disjoint
+				  E ∪ F are outcomes in either E or F. When not disjoint the probability of *E ∪ F* isn't the sum because it shouldnm't be counted twice. So... we need :
+				  Pr(*E* ∪ *F*) = Pr(*E*) + Pr(*F*) - Pr(*E* ∩ *F*)
+			- The *complement* of an event *E* is the event E^c consisting of all outcomes not in *E*,
+			  
+			  #+BEGIN_EXPORT latex
+			  E^{c} = \left\lbrace \omega \epsilon \varOmega  \colon \omega \cancel{\epsilon} E \right\rbrace
+			  #+END_EXPORT
+				- probability of complementry event is 
+				  id:: 63f688ee-4669-4cf7-8e74-475c4474cae2
+				  
+				  #+BEGIN_EXPORT latex
+				  Pr(E^{c}) = 1 - Pr(E)
+				  #+END_EXPORT
+				- We can use above [formula](logseq://graph/pages?block-id=63f688ee-4669-4cf7-8e74-475c4474cae2) to find Pr(*E*)
+					- Example:
+					  Ω consists of possible outcomes of rolling dice. Let *E*be the event
+					  E = {at least one six is rolled}.
+					  or, explicitly
+					  E = {(1, 6), (6, 1), (2, 6), (6, 2), (3, 6), (6, 3), (4, 6), (6, 4), (5, 6), (6, 5), (6, 6)}, 
+					  Each has a probability of (1/36) so...
+					  
+					  #+BEGIN_EXPORT latex
+					  Pr(E) = {\omega \epsilon E}\sum Pr(\omega) = \frac{11}{36}
+					  #+END_EXPORT
+					  Probability of not rolling a six would be
+					  
+					  #+BEGIN_EXPORT latex
+					  Pr(no sixes rolled) = Pr(E^{c}) = 1 - Pr(E) = \frac{25}{36}
+					  #+END_EXPORT
+					  Next we could consider event *F* defined by 
+					  *F* = {no number higher than two is rolled} or
+					  F = {(1, 1), (1, 2), (2, 1), (2, 2)}
+					  Which is disjoint from *E*, so the probability of either is
+					  
+					  #+BEGIN_EXPORT latex
+					  Pr(E \cup F ) = Pr(E) + Pr(F) = \frac{11}{36} + \frac{4}{36} = \frac{15}{36}
+					  #+END_EXPORT
+					  FOr nondisjoint events, the computation is more complicated since we need to avoid double counting outcomes
+					  G = {doubles}  or {(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6)}. Then *E* and *G* both contains outcome (6, 6)so the union E or G only contains 16 outcomes, not 17 ...
+					- TODO : DO MORE OF EXAMPLES
+			- #+BEGIN_IMPORTANT
+			  Defn: Two events *E* and *F* are said to be *independent* if
+			  Pr(E ∩ F ) = Pr(E) · Pr(F )
+			  Where recall that probability of the intersection Pr(E ∩ F ) is probability that both *E* and *F* occur.
+			  #+END_IMPORTANT
+				- Example: 
+				  A coin is tossed 10 times and results are recorded. What are probabilities of following?
+				  #+BEGIN_EXPORT latex
+				  E_{1} = {first five tosses are all heads}\\E_{2} = {first five tosses are all heads and rest are tails}\\E_{3} = {Exactly five of the ten tosses are heads}\\
+				  #+END_EXPORT
+				  Result of any one toss is *independent*  of the result of any other toss so ....find probability of getting H on first five tosses by multiplyinmg probability of getting H on any one of these tosses so....
+				  
+				  #+BEGIN_EXPORT latex
+				  Pr(E_{1}) = (\frac{1}{2})^5 = \frac{1}{32}
+				  #+END_EXPORT
+				  in order to find E_2....we need a sequence HHHHHTTTTT so...
+				  
+				  #+BEGIN_EXPORT latex
+				  Pr(E_{2}) = (\frac{1}{2})^{10} = \frac{1}{1024}
+				  #+END_EXPORT
+				  but Pr(E_3)...exactly five H's to occur but places no restriction on when they occur. Count how many ways to distribute five H's and five T's into ten spots or how many different sequences we can form consisting of five H's and five T's. This is simply number of ways of choosing five locations from ten possible locations which is combinatriol symbol (10/5). So dividing number of outcomes satisfying E_3 by total number of outcomes....
+				  
+				  #+BEGIN_EXPORT latex
+				  Pr(E_{3}) = (\frac{10}{5}) * \frac{1}{2^{10}} = \frac{252}{1024} = \frac{63}{256} \approx 0.246
+				  #+END_EXPORT
+			- 4.3.2 Bayes Formula
+				- So there's a connection between probability of two events *E* and *F* occur simuntously and probability that one of them occurs if we know the other one   occured...or Pr(*E* ∩ *F*). This is called the *conditional probability* of *F* on *E*
+				- id:: 63f7cffe-e25c-4bbb-81c9-ab3ef1d9db29
+				  #+BEGIN_IMPORTANT
+				  Defn: The *conditional probabilty* of *F* on *E is denoted by*
+				  #+END_IMPORTANT
+				  #+BEGIN_EXPORT latex
+				  Pr(E \mid E) = Pr(F given E occured)
+				  #+END_EXPORT
+				  and given by formula....
+				  #+BEGIN_EXPORT latex
+				  Pr(F \mid E) = \frac{Pr(F \cap E)}{Pr(E)}
+				  #+END_EXPORT
+					- On left hand side...Assuming E occurs, so our sample space is E instead of Ω. We are asking for probability  that event F occurs in smaller universe of outcomes, so we should compute the proportion of events F that is included in event E, divided by total size of event E on [right hand side](logseq://graph/pages?block-id=63f7cffe-e25c-4bbb-81c9-ab3ef1d9db29)
+						- [Formula](logseq://graph/pages?block-id=63f7cffe-e25c-4bbb-81c9-ab3ef1d9db29) implies 
+						  #+BEGIN_EXPORT latex
+						  Pr(F \mid E)Pr(E) = Pr(F \cap E) = Pr(E \cap E) = Pr(E \mid F)Pr(F)
+						  #+END_EXPORT
+						  #+BEGIN_IMPORTANT
+						  Dividing both sides by Pr(F) gives preliminary version of *Baye's formula*:
+						  #+END_IMPORTANT
+						  #+BEGIN_EXPORT latex
+						  Pr(E \mid F) = \frac{Pr(F \mid E)Pr(E)}{Pr(F)}     (Bayes's)
+						  #+END_EXPORT
+						  Which is useful for conditional probability of F on E and want to know reverse conditional probability of E on F
 						-
-				-
-				-
-				-
-				-
-		-
