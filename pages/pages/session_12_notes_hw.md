@@ -128,6 +128,7 @@
 				  #+END_EXPORT
 					- On left hand side...Assuming E occurs, so our sample space is E instead of Ω. We are asking for probability  that event F occurs in smaller universe of outcomes, so we should compute the proportion of events F that is included in event E, divided by total size of event E on [right hand side](logseq://graph/pages?block-id=63f7cffe-e25c-4bbb-81c9-ab3ef1d9db29)
 						- [Formula](logseq://graph/pages?block-id=63f7cffe-e25c-4bbb-81c9-ab3ef1d9db29) implies 
+						  id:: 63f8d31d-f63d-4d79-9ae5-d76e1abc74f7
 						  #+BEGIN_EXPORT latex
 						  Pr(F \mid E)Pr(E) = Pr(F \cap E) = Pr(E \cap E) = Pr(E \mid F)Pr(F)
 						  #+END_EXPORT
@@ -138,4 +139,33 @@
 						  Pr(E \mid F) = \frac{Pr(F \mid E)Pr(E)}{Pr(F)}     (Bayes's)
 						  #+END_EXPORT
 						  Which is useful for conditional probability of F on E and want to know reverse conditional probability of E on F
-						-
+						- #+BEGIN_NOTE
+						  Proposition: Let *E* and *F* be events
+						  #+END_NOTE
+							- (a)
+							  #+BEGIN_EXPORT latex
+							  Pr(E) = Pr(E \mid F)Pr(F) + Pr(E \mid F^{c})Pr(F^{c})
+							  #+END_EXPORT
+							  (b)
+							  
+							  #+BEGIN_EXPORT latex
+							  Pr(E \mid F) =  \frac{Pr(F \mid E)(Pr(E)}{Pr(F \mid E)(Pr(E) + Pr(F \mid E^{c})Pr(E^{c})}
+							  #+END_EXPORT
+								- Proof for (a):
+								  
+								  #+BEGIN_EXPORT latex
+								  Pr(E \mid F)Pr(F) + Pr(E \mid F^{c})Pr(F^{c}) \\
+								  = Pr(E \cap F) + Pr(E \cap F^{c})  ( Bayes's) \\
+								  =Pr((E \cap F) \cup (E \cap F^{c})) \\
+								  =Pr(E)
+								  #+END_EXPORT
+								- Proof for (b):
+								  reverse the roles of E and F in (a) to get 
+								  #+BEGIN_EXPORT latex
+								  Pr(F) = Pr(F \mid E)Pr(E) + Pr(F \mid E^{c})Pr(E^{c})
+								  #+END_EXPORT
+			- 7.1 Digital signatures:
+				- Defn: a *digital signature* is a data string which associates a message with some entity
+				  ![image.png](../assets/image_1677254916335_0.png)
+	- # Notes on homework from lecture...
+		- statistical sewcurity...implies computational security...adversary can't distinguish from random noise

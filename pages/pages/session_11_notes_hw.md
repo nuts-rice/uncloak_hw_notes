@@ -17,7 +17,8 @@
 		- based on discrete log problem being difficult to solve
 - 2.2 Discrete Log problem
 	- The Diffie Hellman public key construction is based on discrete lograthm problem in finite field *F_p* (field with prime number of elements) or *Z/pZ*
-	- #+BEGIN_IMPORTANT
+	- id:: 63f63d7b-c1b4-493d-9134-371bcf54f6be
+	  #+BEGIN_IMPORTANT
 	  Let *p* be a large prime, there exists a primative (generator)  *g*. Every nonzero element of *F_p* is equal to some power of *g*. Most importantly *g^p-1* = 1 by fermats little therom, and no smaller power of *g* is equal to 1. The list of elements 
 	  1,*g*, *g^2*,*g^3*...*g^p-2*∈ *F_p**
 	  is a complerte list of element s in *F_p* in some order

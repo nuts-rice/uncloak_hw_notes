@@ -44,7 +44,8 @@
 		  In other words: 
 		  *r_i+2* < 1/2* *r_i* for all *i* = 0,1,2...
 		  #+END_QUOTE
-	- #+BEGIN_QUOTE
+	- id:: 63ea7bec-9092-419f-8b74-91564cdc5767
+	  #+BEGIN_QUOTE
 	  Extended eucledian algorithm:
 	  Let *a* and *b* be positive intergers. Then the equation
 	  *au* + *bv* = gcd(*a, b*)
