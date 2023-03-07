@@ -17,8 +17,28 @@ struct Point {
     curve: EllipticCurve,
 }
 */
+pub use crypto_bigint as bigint;
+use num_bigint::BigUint;
+
+#[derive(Clone, Debug, Default, Eq, PartialEq, PartialOrd, Ord)]
+pub struct Sep256k1 {
+    P: BigUint,
+    Q: BigUint,
+    R: BigUint,
+    a: u32,
+    b: u32,
+}
+
+/*
+impl EllipticCurve for Sep256k1 {
+
+    unimplemented!()
+
+}
+*/
 
 pub trait EllipticCurve: 'static + Clone + Eq + Ord + Send + Sync {
+    type Uint: bigint::ArrayEncoding;
     fn is_on_curve() {
         unimplemented!()
     }
@@ -27,9 +47,9 @@ pub trait EllipticCurve: 'static + Clone + Eq + Ord + Send + Sync {
         unimplemented!()
     }
 
-    //fn has_point(&self, point: Point) {
-    //    unimplemented!()
-    //
+    fn has_point(&self) {
+        unimplemented!()
+    }
 
     fn eq(&self) {
         unimplemented!()
@@ -41,7 +61,7 @@ pub trait Point: 'static + Copy + Clone + Eq + Ord + Send + Sync {
         unimplemented!()
     }
 
-    fn eq(&self) {
+    fn eq(&self, _point: Box<[u8]>) {
         unimplemented!()
     }
 

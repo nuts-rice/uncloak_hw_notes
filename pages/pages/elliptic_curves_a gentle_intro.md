@@ -20,11 +20,13 @@
   ![image.png](../assets/image_1677427814226_0.png)
 - Groups:
 	- we have binary operation of addition or + which is defined by:
+	  id:: 6400be2b-db3a-4349-bc2e-c6ed145f3dd5
 		- *closure*: if *a* and *b* are members of *G* then *a* + *b* is member of *G*
 		- *associativity*: (a + b) + c = a + (b + c)
 		- there's an *identity element* 0 such that a + 0 = 0 + a = a
 		- every element has *iverse*, for every *a* there exists *b* such that *a* + *b* = 0
 		- abelian requirement:
+		  id:: 6400be2b-0692-40f6-a695-fc7bcbc648de
 		- *communativity*: a + b = b + a
 		- from these can be derived
 			- the *identity element is unique*
@@ -145,3 +147,37 @@
 						- (5 + (-5)) mod 23 = (5 + 18) mod 23
 					- multipclative inverse: 9^{-1} mod 23 = 18
 						- 9 * 9^{-1} mod 23 = 9 * 18 mod 23 = 1
+				- Division modulo p:
+					- what does x/y mean in F_{p}:
+					  x/y = x * y^{-1}
+					- ![image.png](../assets/image_1678147823727_0.png)
+				- Elliptic curves in F_{p}
+					- ![image.png](../assets/image_1678211602854_0.png)
+					- #+BEGIN_EXPORT latex
+					  \lbrace (x,y) \in (\mathbb{F}_{p})^{2} \mid y^{2} \equiv x^{3} + ax + b (mod p), \\ \ \\ 4a^{3}+ 27b^{2} \ncong 0 (mod \ p) \rbrace \cup \lbrace 0 \rbrace
+					  #+END_EXPORT
+					- 0 is till point at infinity and *a*, *b* are two intergers in F_{p}
+					- ![image.png](../assets/image_1678211683010_0.png)
+					- elliptic curves in F_{p} form an [ableian group](logseq://graph/pages?block-id=6400be2b-0692-40f6-a695-fc7bcbc648de) (communative)
+				- Point addition:
+					- Three points are alligned if there is line connecting all of them
+					- Lines in F_{p} is the set of points (x, y) that satisfy
+					  #+BEGIN_EXPORT latex
+					  ax + by + c \equiv 0 \ (mod \ p)
+					  #+END_EXPORT
+					- ![image.png](../assets/image_1678212283019_0.png)
+					- the point addition operation retains properties [above](logseq://graph/pages?block-id=6400be2b-db3a-4349-bc2e-c6ed145f3dd5):
+					  #+BEGIN_EXPORT latex
+					  Q + 0 = 0 + Q \ (Identity) \\ \ \\ -Q = (x_{Q}, -y_{Q} \ mod \ p)
+					  #+END_EXPORT
+					- ![image.png](../assets/image_1678212581575_0.png)
+				- Algebraic Sum
+					- add "mod p" to point calculation [formulas](logseq://graph/pages?block-id=6406183f-4aa5-4698-9be9-c5e4c0a7f702)
+					- ![image.png](../assets/image_1678212727125_0.png)
+				- The order of an elliptic curve group
+					- #+BEGIN_IMPORTANT
+					  Defn: number of points in a group is called the *order of the group*
+					  And we can compute this number in polynomial time  using Schoof's [algorithm](https://www.mat.uniroma2.it/~schoof/ctg.pdf) 
+					  #+END_IMPORTANT
+				- Scalar multlipication and cyclic subgroups
+				-
