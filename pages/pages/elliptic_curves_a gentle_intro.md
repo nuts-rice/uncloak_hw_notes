@@ -40,6 +40,10 @@
 		  P + (Q + R) = Q + (P + R) = R + (P + Q) = 0 which means ...
 		  abelian group with associastivity and communitative
 - Geometric addition:
+	- Defn: [Affine](https://mathworld.wolfram.com/Affine.html)
+	  #+BEGIN_IMPORTANT
+	  can be represented as a tuple of coordinates, assuming linear space
+	  #+END_IMPORTANT
 	- So if P + Q + R = 0...we can have P + Q = -R (the inverse)
 	- ![image.png](../assets/image_1677455512901_0.png)
 	- But because of this we also need to ask..
@@ -180,4 +184,9 @@
 					  And we can compute this number in polynomial time  using Schoof's [algorithm](https://www.mat.uniroma2.it/~schoof/ctg.pdf) 
 					  #+END_IMPORTANT
 				- Scalar multlipication and cyclic subgroups
-				-
+					- multiplication defined as :
+					  
+					  #+BEGIN_EXPORT latex
+					  nP = P \ + \ P \ + \ ....\ +\ P \ for \ n \ times
+					  #+END_EXPORT
+					-

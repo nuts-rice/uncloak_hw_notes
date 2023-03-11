@@ -1,0 +1,32 @@
+- # Lecture:
+	- shamirs shared secret
+	- MULTI PARTY COMPUTATION-
+	  group of people maintains secret, each party holds onto one share of key to aggrate to one signature'
+	- central verifier checks if multiple parties signatures are valid, then outputs final signature
+		- but central verifer has to be trusted and needs verify T fro every signatur
+	- Threshold signatures
+		- need particular shares if we want any t-shares with shares not showing particular information on private keys
+		- we can try encoding with error correcting codes (bit padding that show some fraction to reconstruct information about string)
+			- each party obtains something that would allow them to reveal whole of t
+			- extra storage cost
+		- shamirs secret sharing: lets encode secret in a point *x* in some function with higher degrees of freedom (or polynomial)
+		- any two distinct points along line will reconstruct lines
+		- want T of N (construct degree T polynomial, hand out N points)
+		- T-1 (3 out of 4) participants can't brute force in polynomial time
+		- give the *n* participants one of t-1
+		- Want everyone to contribute randomness toward secret
+			- come with private value u_{i} and private coefficents a_{i}
+			- private polynomials they construct
+		- then they need to share public values , public keys
+		- if alice has her polynomial, she can send other players evaluation at index *i* (p_{i}(i)
+		- each player has some evaluation of their polynomial coorosponding to their index
+		- player(*x*) = b_{0} + b_{1}x + .... b_{t}x
+		- BLS signature (aggregation)
+			- want: non-interctive signature aggregation
+			- want Alice (\sigma_{a},m)
+			- bob (\sigma_{b}, m)
+			- output final signature
+			- we can use pairing signatures!
+			- pairing signatures could be plotted as dot products by exponiant *e*
+			- using additive notation
+-

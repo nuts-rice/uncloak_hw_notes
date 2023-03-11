@@ -19,6 +19,7 @@ struct Point {
 */
 pub use crypto_bigint as bigint;
 use num_bigint::BigUint;
+use std::fmt;
 
 #[derive(Clone, Debug, Default, Eq, PartialEq, PartialOrd, Ord)]
 pub struct Sep256k1 {
@@ -54,10 +55,22 @@ pub trait EllipticCurve: 'static + Clone + Eq + Ord + Send + Sync {
     fn eq(&self) {
         unimplemented!()
     }
+    fn identity(&self) {
+        unimplemented!()
+    }
 }
 
-pub trait Point: 'static + Copy + Clone + Eq + Ord + Send + Sync {
+pub trait Point: 'static + Copy + Clone + Send + Sync {
+    type X: bigint::Integer;
+    type Y: bigint::Integer;
+
+    fn x(&self) -> Self::X;
+
     fn to_bytes(&self) {
+        unimplemented!()
+    }
+
+    fn is_identity(&self) {
         unimplemented!()
     }
 
@@ -76,16 +89,14 @@ pub trait Point: 'static + Copy + Clone + Eq + Ord + Send + Sync {
     fn invert(&self) {
         unimplemented!()
     }
+
+    fn double(&self) {
+        unimplemented!()
+    }
 }
 
 /*
 impl fmt::Debug for EllipticCurve {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{:?}", self.to_bytes())
-    }
-}
-
-impl fmt::Debug for Point {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:?}", self.to_bytes())
     }
