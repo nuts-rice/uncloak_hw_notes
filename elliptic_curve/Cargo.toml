@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.69"
 base16ct = "0.2.0"
 crypto-bigint = { version = "0.5.0", features = ["alloc", "serde", "der", "generic-array"] }
 num-bigint = "0.4.3"
