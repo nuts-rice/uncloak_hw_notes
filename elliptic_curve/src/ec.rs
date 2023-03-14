@@ -1,26 +1,5 @@
-/*
-#[derive(Clone)]
-struct EllipticCurve {
-    order: BigUint,
-    p: BigUint,
-    a: BigUint,
-    b: BigUint,
-    g: BigUint,
-}
-*/
-
-/*
-#[derive(Copy, Clone)]
-struct Point {
-    x: BigUint,
-    y: BigUint,
-    curve: EllipticCurve,
-}
-*/
-
 pub use crypto_bigint as bigint;
 use num_bigint::BigUint;
-use std::fmt::*;
 
 #[derive(Clone, Debug, Default, Eq, PartialEq, PartialOrd, Ord)]
 pub struct EllipticCurve {
@@ -45,9 +24,7 @@ pub struct FinitePoint {
 
 /*
 impl EllipticCurve for Sep256k1 {
-
     unimplemented!()
-
 }
 */
 
@@ -131,10 +108,35 @@ impl Point {
     }
 }
 
-/*
-impl fmt::Debug for EllipticCurve {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{:?}", self.to_bytes())
+mod eea {
+    use super::*;
+
+    fn advance_euclid(a: &mut BigUint, old_a: &mut BigUint, quoatient: BigUint) {
+        let temp = a.clone();
+        *a = &*old_a + quoatient * &temp;
+        *old_a = temp;
+    }
+
+    fn eea(a: BigUint, b: BigUint) -> (BigUint, BigUint, BigUint) {
+        let (mut old_r, mut rem) = (a, b);
+        let (mut old_s, mut coeff_s) = (BigUint::from(1u32), BigUint::from(0u32));
+        let (mut old_t, mut coeff_t) = (BigUint::from(0u32), BigUint::from(1u32));
+
+        while rem != BigUint::from(0u32) {
+            let quoatient = old_r.clone() / rem.clone();
+            advance_euclid(&mut rem, &mut old_r, quoatient.clone());
+            advance_euclid(&mut coeff_s, &mut old_s, quoatient.clone());
+            advance_euclid(&mut coeff_t, &mut old_t, quoatient.clone());
+        }
+        (old_r, old_s, old_t)
+    }
+
+    pub fn mod_inv_eea(x: BigUint, n: BigUint) -> Option<BigUint> {
+        let (g, x, _) = eea(x, n.clone());
+        if g == BigUint::from(1u32) {
+            Some((x % n.clone() + n.clone()) % n)
+        } else {
+            None
+        }
     }
 }
-*/
