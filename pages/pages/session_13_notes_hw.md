@@ -49,6 +49,7 @@
 			- Each user P_{i} constructs:
 				- u_{i}, an initial private share, selected at random by user
 				- (KGD_{i}, KGC_{i}) is then computed as (g^{u_i}, Com(g^{u_i}), a *commitement* to the hiding of u_{i} to each other user. Commitmernt to the commitment of a secret
+				  id:: 64120fa0-64d9-4182-a441-7e93eb0c1820
 			- Each user recieves:
 				- KGC_{j} \forall j, commitment broadcast by every other user
 				- E_{j} \forall j, public key broadcast by all players
